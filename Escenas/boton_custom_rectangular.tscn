@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ccs373pmpv4v5"]
+
+[ext_resource type="FontFile" uid="uid://dbigpbaurc7h" path="res://Fuentes de Texto/Jersey15-Regular.ttf" id="1_3q3eg"]
+[ext_resource type="Texture2D" uid="uid://c3f1nuv1s6g15" path="res://Sprites/Menus/Menu Principal/Boton Rectangular Down.png" id="2_c6tu1"]
+[ext_resource type="Script" uid="uid://c87xymamagjdu" path="res://Scripts/boton_custom.gd" id="2_piev3"]
+[ext_resource type="Texture2D" uid="uid://12whsm13f0i" path="res://Sprites/Menus/Menu Principal/Boton Rectangular Up.png" id="2_q6sn3"]
+[ext_resource type="AudioStream" uid="uid://bbhu5pqro5ndk" path="res://Sonidos/Objetos/03.3 Boton Presionado.wav" id="3_q6sn3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bfaun"]
+load_path = "res://.godot/imported/Boton Rectangular Up.png-9a111b8d2ba19deb1a506b9b5ef9534f.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6tu1"]
+content_margin_bottom = 19.0
+texture = SubResource("CompressedTexture2D_bfaun")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqfby"]
+texture = ExtResource("2_c6tu1")
+modulate_color = Color(0.5420044, 0.5420044, 0.5420044, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rsfe8"]
+texture = ExtResource("2_q6sn3")
+modulate_color = Color(0.5420044, 0.5420044, 0.5420044, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6sn3"]
+bg_color = Color(0, 0, 0, 0.47300002)
+
+[node name="boton_custom_rectangular" type="Button" unique_id=1231721910]
+custom_minimum_size = Vector2(40, 16)
+offset_right = 40.0
+offset_bottom = 19.0
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("1_3q3eg")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_c6tu1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dqfby")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rsfe8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q6sn3")
+clip_text = true
+script = ExtResource("2_piev3")
+
+[node name="sonido_presionado" type="AudioStreamPlayer2D" parent="." unique_id=1253038850]
+stream = ExtResource("3_q6sn3")
+volume_db = 10.0
+bus = &"SFX"
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

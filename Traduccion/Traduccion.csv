@@ -1,0 +1,69 @@
+id,es,en
+btn_play,JUGAR,PLAY
+btn_shop,TIENDA,SHOP
+btn_exit,SALIR,EXIT
+btn_characters,PERSONAJES,CHARACTERS
+btn_purchase,COMPRAR,PURCHASE
+btn_back,ATRÁS,BACK
+btn_back_menu,REGRESAR AL MENÚ,BACK TO MENU
+btn_play_again,VOLVER A JUGAR,PLAY AGAIN
+btn_yes,SI,YES
+btn_language,ESPAÑOL,ENGLISH
+btn_settings,CONFIGURACIÓN,SETTINGS
+btn_delete_progress,BORRAR PROGRESO,DELETE PROGRESS
+btn_submit,Enviar,Submit
+label_delete,"¿ESTÁS SEGURO DE QUE QUIERES
+ ELIMINAR TU PROGRESO?","ARE YOU SURE YOU WANT TO  
+ DELETE YOU PROGRESS?"
+label_death,HAS MUERTO,YOU HAVE DIED
+label_victory,HAS GANADO,YOU HAVE WON
+label_carga,carga_es,carga_en
+label_damage,DAÑO,DAMAGE
+label_life,VIDA,LIFE
+label_victory2,TE HAS PASADO EL JUEGO EN:,YOU’VE BEATEN THE GAME IN:
+label_paused,JUEGO PAUSADO,GAME PAUSED
+label_volume_music,MÚSICA,MUSIC
+leaderboard_name,Nombre,Name
+leaderboard_time,Tiempo,Time
+text_name,Introduce tu Nombre de Usuario,Enter your Username
+label_creditos,"DESARROLLO
+Blangel
+
+ÁRTE Y DISEÑO
+Tileset y personajes: 0x72 (16x16 DungeonTileset II)
+Fondo del menú: upklyak (Freepik)
+Botones de Acción: dizeoakamatsu (ui-buttons-20x16-px)
+Cursor: ""Alternate Normal Select 2"" por THTH (Dominio Público)
+
+AUDIO
+Efectos: Leohpaz (Minifantasy SFX)
+Música: Not Jam (Not Jam Music Pack)
+Obra: ""Invencible"", Música de https://www.fiftysounds.com/es/
+
+TIPOGRAFÍAS
+Bungee Spice, Jersey 15, Dacing Script
+(Bajo licencia de SIL OFL)
+
+
+¡Gracias por jugar!","DEVELOPMENT
+Blangel
+
+ART AND DESIGN
+Tileset and Characters: 0x72 (16x16 DungeonTileset II)
+Menu Background: upklyak (Freepik)
+Action Buttons: dizeoakamatsu (ui-buttons-20x16-px)
+Cursor: ""Alternate Normal Select 2"" by THTH (Public Domain)
+
+AUDIO
+Effects: Leohpaz (Minifantasy SFX)
+Music: Not Jam (Not Jam Music Pack)
+Track: ""Invencible"", Music by https://www.fiftysounds.com/es/
+
+TYPOGRAPHIES
+Bungee Spice, Jersey 15, Dacing Script 
+(Under license fom SIL OFL)
+
+Thanks for playing!"
+label_volumen,VOLUMEN,VOLUME
+label_level,NIVEL,LEVEL
+label_crosshair,PUNTERO,CROSSHAIR

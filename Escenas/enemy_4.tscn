@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://dl0frb7h48rh1"]
+
+[ext_resource type="Script" uid="uid://dmhdw7ldug5mx" path="res://Scripts/enemy_mini_boss.gd" id="1_4q6wk"]
+[ext_resource type="Texture2D" uid="uid://sh7txxkqi4at" path="res://Sprites/Personajes/Anim_muerte.png" id="2_4q6wk"]
+[ext_resource type="Texture2D" uid="uid://bbcdm2w0yggpo" path="res://Sprites/Personajes/Enemigos/Big Demon/big_demon_idle_anim_f0.png" id="3_83qum"]
+[ext_resource type="Texture2D" uid="uid://bta2c7f6wc23t" path="res://Sprites/Personajes/Enemigos/Big Demon/big_demon_idle_anim_f1.png" id="4_1dlwg"]
+[ext_resource type="Texture2D" uid="uid://cploxl7g3net0" path="res://Sprites/Personajes/Enemigos/Big Demon/big_demon_idle_anim_f2.png" id="5_ngipl"]
+[ext_resource type="Texture2D" uid="uid://bgfxpxiwbhyvo" path="res://Sprites/Personajes/Enemigos/Big Demon/big_demon_idle_anim_f3.png" id="6_qmqtw"]
+[ext_resource type="Texture2D" uid="uid://bel6f7kvwbg5b" path="res://Sprites/Personajes/Enemigos/Big Demon/big_demon_run_anim_f0.png" id="7_5my8e"]
+[ext_resource type="Texture2D" uid="uid://do0ph6jip4ja" path="res://Sprites/Personajes/Enemigos/Big Demon/big_demon_run_anim_f1.png" id="8_houvr"]
+[ext_resource type="Texture2D" uid="uid://drrfcf2t4gj53" path="res://Sprites/Personajes/Enemigos/Big Demon/big_demon_run_anim_f2.png" id="9_qpt46"]
+[ext_resource type="Texture2D" uid="uid://q4wkwmhumamc" path="res://Sprites/Personajes/Enemigos/Big Demon/big_demon_run_anim_f3.png" id="10_nd66j"]
+[ext_resource type="AudioStream" uid="uid://bwge2qdks07rb" path="res://Sonidos/Enemigos/Hit/21.3 MiniBoss Hit.wav" id="11_4q6wk"]
+[ext_resource type="AudioStream" uid="uid://bwab2be57wa36" path="res://Sonidos/Enemigos/Atk/17.3 MiniBoss Atk.wav" id="12_83qum"]
+[ext_resource type="AudioStream" uid="uid://jxksycdpeotw" path="res://Sonidos/Enemigos/Atk/18 Carga Hechizo.wav" id="13_83qum"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jjbr6"]
+radius = 12.0
+height = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83qum"]
+atlas = ExtResource("2_4q6wk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dlwg"]
+atlas = ExtResource("2_4q6wk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngipl"]
+atlas = ExtResource("2_4q6wk")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmqtw"]
+atlas = ExtResource("2_4q6wk")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pvjha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83qum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dlwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngipl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmqtw")
+}],
+"loop": 0,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qmqtw")
+}],
+"loop": 0,
+"name": &"Hit",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_83qum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1dlwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ngipl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qmqtw")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_5my8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_houvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qpt46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nd66j")
+}],
+"loop": 1,
+"name": &"Walking",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_04q1f"]
+radius = 15.0
+height = 40.0
+
+[node name="Enemy_4" type="CharacterBody2D" unique_id=1327196580 groups=["enemys"]]
+script = ExtResource("1_4q6wk")
+SPEED = 85.0
+vida = 30
+damage = 7
+
+[node name="Timers" type="Node" parent="." unique_id=819374844]
+
+[node name="Timer" type="Timer" parent="Timers" unique_id=572927383]
+wait_time = 1.5
+
+[node name="timer_movimiento" type="Timer" parent="Timers" unique_id=2014096536]
+wait_time = 0.2
+autostart = true
+
+[node name="timer_disparo" type="Timer" parent="Timers" unique_id=675320175]
+wait_time = 7.0
+autostart = true
+
+[node name="timer_disparando" type="Timer" parent="Timers" unique_id=2124871870]
+wait_time = 1.5
+one_shot = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1047737991]
+path_desired_distance = 30.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=620998850]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_jjbr6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=92576615]
+sprite_frames = SubResource("SpriteFrames_pvjha")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1241460523]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=752794158]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_04q1f")
+
+[node name="sonido_recibe_golpe" type="AudioStreamPlayer2D" parent="." unique_id=1562442385]
+stream = ExtResource("11_4q6wk")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="enemigo_ataca" type="AudioStreamPlayer2D" parent="." unique_id=833560774]
+position = Vector2(0, -1)
+stream = ExtResource("12_83qum")
+volume_db = 1.0
+bus = &"SFX"
+
+[node name="hechizo_disparado" type="AudioStreamPlayer2D" parent="." unique_id=1552376506]
+stream = ExtResource("13_83qum")
+volume_db = 2.0
+bus = &"SFX"
+
+[node name="marcador" type="Node2D" parent="." unique_id=2087147672]
+
+[node name="Marker2D" type="Marker2D" parent="marcador" unique_id=1725368646]
+position = Vector2(11, 0)
+
+[connection signal="timeout" from="Timers/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timers/timer_movimiento" to="." method="_on_timer_movimiento_timeout"]
+[connection signal="timeout" from="Timers/timer_disparo" to="." method="_on_timer_disparo_timeout"]
+[connection signal="timeout" from="Timers/timer_disparando" to="." method="_on_timer_disparando_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

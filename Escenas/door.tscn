@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cnj5v36mlucob"]
+
+[ext_resource type="Script" uid="uid://fcp0cbw26y4p" path="res://Scripts/door.gd" id="1_awj3x"]
+[ext_resource type="Texture2D" uid="uid://c2fpjk2de6jan" path="res://Sprites/World/Puerta Arriba.png" id="2_3ac5w"]
+[ext_resource type="Texture2D" uid="uid://dfp0pgpnc5lvj" path="res://Sprites/World/Puerta Abajo.png" id="2_rwn5j"]
+[ext_resource type="AudioStream" uid="uid://rm7egbrvkqvh" path="res://Sonidos/Objetos/03.1 Puerta Abriendose.wav" id="4_3ac5w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68f6x"]
+size = Vector2(26, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awj3x"]
+size = Vector2(32, 5)
+
+[node name="Door" type="StaticBody2D" unique_id=656305527]
+z_index = 2
+script = ExtResource("1_awj3x")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2031201679]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=987202448]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_68f6x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=83601658]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_awj3x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1141007555]
+z_index = 1
+position = Vector2(0, -8)
+texture = ExtResource("2_3ac5w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=112507432]
+position = Vector2(0, 8)
+texture = ExtResource("2_rwn5j")
+
+[node name="puerta_abriendose" type="AudioStreamPlayer2D" parent="." unique_id=1274766182]
+stream = ExtResource("4_3ac5w")
+volume_db = 14.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

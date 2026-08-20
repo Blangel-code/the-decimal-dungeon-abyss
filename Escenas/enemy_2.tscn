@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://5bd547gsuhc8"]
+
+[ext_resource type="Script" uid="uid://dhjxwfryy5bmb" path="res://Scripts/enemy.gd" id="1_qny2f"]
+[ext_resource type="Texture2D" uid="uid://sh7txxkqi4at" path="res://Sprites/Personajes/Anim_muerte.png" id="2_njkwu"]
+[ext_resource type="Texture2D" uid="uid://ds5omttl3rv8n" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_hit_anim_f0.png" id="2_on1ly"]
+[ext_resource type="Texture2D" uid="uid://fad3ayx4vyaj" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_idle_anim_f0.png" id="3_njkwu"]
+[ext_resource type="Texture2D" uid="uid://ci3nsj7mvjtsw" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_idle_anim_f1.png" id="4_ikbvj"]
+[ext_resource type="Texture2D" uid="uid://dxbh6dbw20tbg" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_idle_anim_f2.png" id="5_1ixbh"]
+[ext_resource type="Texture2D" uid="uid://dnojp4yosbfon" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_idle_anim_f3.png" id="6_bvbl8"]
+[ext_resource type="Texture2D" uid="uid://bju6qg302tahu" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_run_anim_f0.png" id="7_li5fm"]
+[ext_resource type="Texture2D" uid="uid://dprq4s3ibaskv" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_run_anim_f1.png" id="8_5mymp"]
+[ext_resource type="Texture2D" uid="uid://yqvr3l2kv8ea" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_run_anim_f2.png" id="9_oo525"]
+[ext_resource type="Texture2D" uid="uid://djurlli7ussms" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_run_anim_f3.png" id="10_v0kmo"]
+[ext_resource type="AudioStream" uid="uid://dqaxpsia3qem7" path="res://Sonidos/Enemigos/Hit/21.1 Lizzard Hit.wav" id="11_li5fm"]
+[ext_resource type="AudioStream" uid="uid://clxckcsefq1g0" path="res://Sonidos/Enemigos/Atk/17.2 Atk sword.wav" id="13_on1ly"]
+[ext_resource type="Texture2D" uid="uid://b6fg260xc8h3y" path="res://Sprites/Objetos/Armas/Espadas/Espada_sprite_1.png" id="13_otkt6"]
+[ext_resource type="Texture2D" uid="uid://c8l2jfynofs8a" path="res://Sprites/Objetos/Armas/Espadas/Espada_sprite_2.png" id="14_kwuxs"]
+[ext_resource type="Texture2D" uid="uid://clxlfvixdqrwb" path="res://Sprites/Objetos/Armas/Espadas/Espada_sprite_3.png" id="15_8w0q2"]
+[ext_resource type="Texture2D" uid="uid://ienimx8aw1ki" path="res://Sprites/Objetos/Armas/Espadas/Espada_sprite_4.png" id="16_5c511"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj12m"]
+size = Vector2(14, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikbvj"]
+atlas = ExtResource("2_njkwu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ixbh"]
+atlas = ExtResource("2_njkwu")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvbl8"]
+atlas = ExtResource("2_njkwu")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li5fm"]
+atlas = ExtResource("2_njkwu")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pvjha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikbvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ixbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvbl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li5fm")
+}],
+"loop": 0,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_on1ly")
+}],
+"loop": 0,
+"name": &"Hit",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_njkwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ikbvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1ixbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bvbl8")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_li5fm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5mymp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oo525")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v0kmo")
+}],
+"loop": 1,
+"name": &"Walking",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_06x5e"]
+radius = 12.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ixbh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_otkt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kwuxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8w0q2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5c511")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 3.5
+}]
+
+[node name="Enemy_2" type="CharacterBody2D" unique_id=1778954111 node_paths=PackedStringArray("arma_enemigo") groups=["enemys"]]
+script = ExtResource("1_qny2f")
+SPEED = 40.0
+vida = 4
+damage = 3
+arma_enemigo = NodePath("Animacion_del_arma")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1948578274]
+path_desired_distance = 30.3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1073784957]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_yj12m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2018621785]
+sprite_frames = SubResource("SpriteFrames_pvjha")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1791811891]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1052013265]
+position = Vector2(4, 4)
+shape = SubResource("CircleShape2D_06x5e")
+
+[node name="Timer" type="Timer" parent="." unique_id=919782233]
+wait_time = 1.5
+
+[node name="sonido_recibe_golpe" type="AudioStreamPlayer2D" parent="." unique_id=1462287404]
+stream = ExtResource("11_li5fm")
+volume_db = -2.0
+bus = &"SFX"
+
+[node name="enemigo_ataca" type="AudioStreamPlayer2D" parent="." unique_id=1844807229]
+stream = ExtResource("13_on1ly")
+bus = &"SFX"
+
+[node name="timer_movimiento" type="Timer" parent="." unique_id=216393707]
+wait_time = 0.2
+autostart = true
+
+[node name="Animacion_del_arma" type="AnimatedSprite2D" parent="." unique_id=960833074]
+sprite_frames = SubResource("SpriteFrames_1ixbh")
+frame = 3
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="timer_movimiento" to="." method="_on_timer_movimiento_timeout"]

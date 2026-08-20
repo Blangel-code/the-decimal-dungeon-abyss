@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://ct6fuumuqbbq"]
+
+[ext_resource type="Script" uid="uid://cvm82kif5n02u" path="res://Scripts/jugador_g.gd" id="1_pqx3y"]
+[ext_resource type="Texture2D" uid="uid://civsr13jty2de" path="res://Sprites/Personajes/Jugadores/Knight/Caballero_ataque.png" id="2_c2dh0"]
+[ext_resource type="Texture2D" uid="uid://hc4g8h0hmqv7" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_idle_anim_f0.png" id="2_muoba"]
+[ext_resource type="PackedScene" uid="uid://bagcf3ty11w1r" path="res://Escenas/arco.tscn" id="2_phmxj"]
+[ext_resource type="Texture2D" uid="uid://dnymnc2idgrra" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_hit_anim_f0.png" id="3_au660"]
+[ext_resource type="Texture2D" uid="uid://1akmlxnbokae" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_idle_anim_f1.png" id="3_fwv5a"]
+[ext_resource type="Texture2D" uid="uid://dsd88uc3tmq6y" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_idle_anim_f2.png" id="5_c2dh0"]
+[ext_resource type="Texture2D" uid="uid://cb78jjxuhyjrs" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_idle_anim_f3.png" id="5_eegfb"]
+[ext_resource type="Texture2D" uid="uid://cld7sv8tv7bsh" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_run_anim_f0.png" id="6_srl76"]
+[ext_resource type="Texture2D" uid="uid://38rlqdcpbohs" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_run_anim_f1.png" id="7_u6ax5"]
+[ext_resource type="Texture2D" uid="uid://comob7ktww47b" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_run_anim_f2.png" id="8_au660"]
+[ext_resource type="Texture2D" uid="uid://fcdc51fhdldb" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_run_anim_f3.png" id="9_rwlck"]
+[ext_resource type="PackedScene" uid="uid://ce11g0774uc6d" path="res://Escenas/espada.tscn" id="12_c2dh0"]
+[ext_resource type="PackedScene" uid="uid://cx6o4d2y14q64" path="res://Escenas/Ui_usuario.tscn" id="12_rwlck"]
+[ext_resource type="AudioStream" uid="uid://cn4ptur41xv84" path="res://Sonidos/Jugador/11_human_damage_2.wav" id="14_c2dh0"]
+[ext_resource type="Texture2D" uid="uid://lurf4ipieq50" path="res://Sprites/Crosshair(white).png" id="16_7pm4f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_srl76"]
+radius = 7.25
+height = 22.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phmxj"]
+atlas = ExtResource("2_c2dh0")
+region = Rect2(0, 0, 32, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsu1a"]
+atlas = ExtResource("2_c2dh0")
+region = Rect2(32, 0, 32, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1340j"]
+atlas = ExtResource("2_c2dh0")
+region = Rect2(64, 0, 32, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g735c"]
+atlas = ExtResource("2_c2dh0")
+region = Rect2(96, 0, 32, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_phmxj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phmxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsu1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1340j")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_g735c")
+}],
+"loop": 0,
+"name": &"Attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_au660")
+}],
+"loop": 0,
+"name": &"Hit",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_muoba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fwv5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c2dh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eegfb")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_u6ax5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_au660")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rwlck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_srl76")
+}],
+"loop": 1,
+"name": &"Walking",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gl37d"]
+radius = 29.0
+
+[node name="Player" type="CharacterBody2D" unique_id=237034593 groups=["Jugadores"]]
+script = ExtResource("1_pqx3y")
+metadata/_edit_group_ = true
+
+[node name="Arco" parent="." unique_id=655044558 instance=ExtResource("2_phmxj")]
+
+[node name="Espada" parent="." unique_id=667464288 instance=ExtResource("12_c2dh0")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1829956217]
+zoom = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=791660939]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_srl76")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=84812286]
+sprite_frames = SubResource("SpriteFrames_phmxj")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="ui_usuario" parent="." unique_id=2003432969 instance=ExtResource("12_rwlck")]
+visible = false
+
+[node name="sonido_hit" type="AudioStreamPlayer2D" parent="." unique_id=432666745]
+stream = ExtResource("14_c2dh0")
+volume_db = 2.0
+bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1341412331]
+
+[node name="hitbox_espada" type="CollisionShape2D" parent="Area2D" unique_id=1777954658]
+position = Vector2(18, 1)
+shape = SubResource("CircleShape2D_gl37d")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Area2D" unique_id=1381946105]
+position = Vector2(47, 0)
+scale = Vector2(0.2, 0.2)
+remote_path = NodePath("../../CrossHair")
+update_rotation = false
+update_scale = false
+
+[node name="CrossHair" type="Sprite2D" parent="." unique_id=1208689766]
+z_index = 5
+position = Vector2(47, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_7pm4f")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="Espada" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Espada" method="_on_area_2d_body_exited"]

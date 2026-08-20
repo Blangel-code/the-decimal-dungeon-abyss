@@ -1,0 +1,241 @@
+[gd_scene format=3 uid="uid://jyljrqovqle1"]
+
+[ext_resource type="Texture2D" uid="uid://y7eyx4k4bghp" path="res://Sprites/Menus/Menu Principal/fondo_de_dungeon.jpg" id="1_lnt83"]
+[ext_resource type="Script" uid="uid://cuisgerp6d5m1" path="res://Scripts/menu_principal.gd" id="1_p25xy"]
+[ext_resource type="PackedScene" uid="uid://ccs373pmpv4v5" path="res://Escenas/boton_custom_rectangular.tscn" id="3_kim34"]
+[ext_resource type="FontFile" uid="uid://dqewmy8tx2ly" path="res://Fuentes de Texto/BungeeSpice-Regular.ttf" id="4_kim34"]
+[ext_resource type="AudioStream" uid="uid://c4nacjaf3p85d" path="res://Sonidos/Musica/ChillMenu_Loopable.wav" id="5_x0hy4"]
+[ext_resource type="FontFile" uid="uid://djofwbh8d02um" path="res://Fuentes de Texto/DancingScript-VariableFont_wght.ttf" id="7_1bgts"]
+[ext_resource type="PackedScene" uid="uid://cddquxk8pu18a" path="res://Escenas/transicion.tscn" id="8_x0hy4"]
+
+[sub_resource type="Animation" id="Animation_x0hy4"]
+resource_name = "leaderboard_visible"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_06xcy"]
+_data = {
+&"leaderboard_visible": SubResource("Animation_x0hy4")
+}
+
+[node name="Menu" type="Control" unique_id=2102099251]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_next = NodePath("Botones/Play")
+script = ExtResource("1_p25xy")
+
+[node name="Botones" type="Node" parent="." unique_id=725460304]
+
+[node name="Play" parent="Botones" unique_id=1061020797 instance=ExtResource("3_kim34")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -24.0
+offset_right = 160.5
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../Opciones")
+focus_neighbor_right = NodePath("../Idioma")
+focus_neighbor_bottom = NodePath("../Shop")
+theme_override_colors/font_color = Color(0.14733289, 0.8378605, 0.43790504, 1)
+theme_override_colors/font_focus_color = Color(0.14901961, 0.8392157, 0.4392157, 1)
+theme_override_colors/font_pressed_color = Color(0.14901961, 0.8392157, 0.4392157, 1)
+theme_override_colors/font_hover_color = Color(0.14901961, 0.8392157, 0.4392157, 1)
+text = "btn_play"
+
+[node name="Shop" parent="Botones" unique_id=1791543466 instance=ExtResource("3_kim34")]
+offset_left = 417.0
+offset_top = 391.0
+offset_right = 736.0
+offset_bottom = 473.0
+focus_neighbor_left = NodePath("../Opciones")
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_right = NodePath("../Idioma")
+focus_neighbor_bottom = NodePath("../Personajes")
+theme_override_colors/font_color = Color(0.9561102, 0.88390446, 0.4397856, 1)
+theme_override_colors/font_focus_color = Color(0.95686275, 0.88235295, 0.4392157, 1)
+theme_override_colors/font_pressed_color = Color(0.95686275, 0.88235295, 0.4392157, 1)
+theme_override_colors/font_hover_color = Color(0.95686275, 0.88235295, 0.4392157, 1)
+text = "btn_shop"
+
+[node name="Personajes" parent="Botones" unique_id=2107864237 instance=ExtResource("3_kim34")]
+offset_left = 417.0
+offset_top = 475.0
+offset_right = 736.0
+offset_bottom = 559.0
+focus_neighbor_left = NodePath("../Opciones")
+focus_neighbor_top = NodePath("../Shop")
+focus_neighbor_right = NodePath("../Idioma")
+focus_neighbor_bottom = NodePath("../Salir")
+theme_override_colors/font_color = Color(0.25030932, 0.72135246, 0.7490225, 1)
+theme_override_colors/font_focus_color = Color(0.2509804, 0.72156864, 0.7490196, 1)
+theme_override_colors/font_pressed_color = Color(0.2509804, 0.72156864, 0.7490196, 1)
+theme_override_colors/font_hover_color = Color(0.2509804, 0.72156864, 0.7490196, 1)
+text = "btn_characters"
+
+[node name="Salir" parent="Botones" unique_id=369131043 instance=ExtResource("3_kim34")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -159.5
+offset_top = -86.0
+offset_right = 159.5
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_neighbor_left = NodePath("../Opciones")
+focus_neighbor_top = NodePath("../Personajes")
+focus_neighbor_right = NodePath("../Idioma")
+theme_override_colors/font_color = Color(0.90359956, 0.3162674, 0.3420279, 1)
+theme_override_colors/font_focus_color = Color(0.9019608, 0.31764707, 0.34117648, 1)
+theme_override_colors/font_pressed_color = Color(0.9019608, 0.31764707, 0.34117648, 1)
+theme_override_colors/font_hover_color = Color(0.9019608, 0.31764707, 0.34117648, 1)
+text = "btn_exit"
+
+[node name="Idioma" parent="Botones" unique_id=1252079495 instance=ExtResource("3_kim34")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -236.0
+offset_top = -79.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_neighbor_left = NodePath("../Play")
+theme_override_colors/font_color = Color(0.4644071, 0.22989768, 0.5423702, 1)
+theme_override_colors/font_focus_color = Color(0.4627451, 0.23137255, 0.5411765, 1)
+theme_override_colors/font_pressed_color = Color(0.4627451, 0.23137255, 0.5411765, 1)
+theme_override_colors/font_hover_color = Color(0.4627451, 0.23137255, 0.5411765, 1)
+theme_override_font_sizes/font_size = 40
+text = "btn_language"
+
+[node name="Opciones" parent="Botones" unique_id=1661458020 instance=ExtResource("3_kim34")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_right = 256.0
+offset_bottom = 0.0
+grow_vertical = 0
+focus_neighbor_right = NodePath("../Play")
+theme_override_colors/font_color = Color(0.5729883, 0.5729883, 0.5729883, 1)
+theme_override_colors/font_focus_color = Color(0.57254905, 0.57254905, 0.57254905, 1)
+theme_override_colors/font_pressed_color = Color(0.57254905, 0.57254905, 0.57254905, 1)
+theme_override_colors/font_hover_color = Color(0.57254905, 0.57254905, 0.57254905, 1)
+theme_override_font_sizes/font_size = 40
+text = "btn_settings"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2112318908]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lnt83")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=1116186462]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -349.0
+offset_top = 71.0
+offset_right = 350.0
+offset_bottom = 286.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_kim34")
+theme_override_font_sizes/font_size = 80
+text = "the decimal
+dungeon abyss"
+horizontal_alignment = 1
+
+[node name="Musica de Fondo" type="AudioStreamPlayer" parent="." unique_id=1881893982]
+stream = ExtResource("5_x0hy4")
+volume_db = -4.0
+bus = &"Music"
+
+[node name="Transicion" parent="." unique_id=334638740 instance=ExtResource("8_x0hy4")]
+layout_mode = 1
+
+[node name="Leaderboard" type="Control" parent="." unique_id=474227182]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Leaderboard" unique_id=1435508972]
+layout_mode = 0
+offset_left = 909.0
+offset_top = 308.0
+offset_right = 1382.0
+offset_bottom = 345.0
+theme_override_constants/separation = 60
+
+[node name="nombre" type="Label" parent="Leaderboard/HBoxContainer" unique_id=932495585]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.28353074, 0.35932165, 0.6637483, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("7_1bgts")
+theme_override_font_sizes/font_size = 30
+text = "leaderboard_name"
+
+[node name="tiempo" type="Label" parent="Leaderboard/HBoxContainer" unique_id=2047073507]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1531628, 0.6035544, 0.63662994, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("7_1bgts")
+theme_override_font_sizes/font_size = 30
+text = "leaderboard_time"
+
+[node name="GridContainer" type="GridContainer" parent="Leaderboard" unique_id=633371039]
+layout_mode = 0
+offset_left = 838.0
+offset_top = 343.0
+offset_right = 1192.0
+offset_bottom = 565.0
+theme_override_constants/h_separation = 65
+columns = 3
+
+[node name="Position" type="VBoxContainer" parent="Leaderboard/GridContainer" unique_id=1862809862]
+layout_mode = 2
+
+[node name="Name" type="VBoxContainer" parent="Leaderboard/GridContainer" unique_id=705925792]
+layout_mode = 2
+
+[node name="Tiempo" type="VBoxContainer" parent="Leaderboard/GridContainer" unique_id=1712840173]
+layout_mode = 2
+
+[node name="leaderboard_anim" type="AnimationPlayer" parent="Leaderboard" unique_id=284960277]
+libraries/ = SubResource("AnimationLibrary_06xcy")
+
+[connection signal="pressed" from="Botones/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Botones/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="Botones/Personajes" to="." method="_on_personajes_pressed"]
+[connection signal="pressed" from="Botones/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Botones/Idioma" to="." method="_on_idioma_pressed"]
+[connection signal="pressed" from="Botones/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="animation_finished" from="Leaderboard/leaderboard_anim" to="." method="_on_leaderboard_anim_animation_finished"]

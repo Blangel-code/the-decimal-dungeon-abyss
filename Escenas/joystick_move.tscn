@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dtahwsspl61n6"]
+
+[ext_resource type="Script" uid="uid://cqdgtceuxf2lq" path="res://Scripts/joystick_move.gd" id="1_bg7s5"]
+[ext_resource type="Texture2D" uid="uid://511ag1t4pfx1" path="res://Sprites/Menus/Teclas/button-background.png" id="2_70l6x"]
+[ext_resource type="Texture2D" uid="uid://c4of0s2omm6fg" path="res://Sprites/Menus/Teclas/button-empty(joystick).png" id="3_dg1mf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iaf5e"]
+radius = 95.0
+
+[node name="Joystick_move" type="Area2D" unique_id=373617097]
+script = ExtResource("1_bg7s5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1888379850]
+shape = SubResource("CircleShape2D_iaf5e")
+
+[node name="Rango" type="Sprite2D" parent="." unique_id=588958008]
+modulate = Color(0.77647233, 0.7764724, 0.7764724, 0.64705884)
+scale = Vector2(6, 6)
+texture = ExtResource("2_70l6x")
+
+[node name="Palanca" type="Sprite2D" parent="." unique_id=1318694173]
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_dg1mf")

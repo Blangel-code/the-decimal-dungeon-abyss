@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://cd2bwa7xv73j5"]
+
+[ext_resource type="PackedScene" uid="uid://ccs373pmpv4v5" path="res://Escenas/boton_custom_rectangular.tscn" id="1_6ihi5"]
+[ext_resource type="Script" uid="uid://dli16xb53f5q8" path="res://Scripts/menu_opciones.gd" id="1_syd2l"]
+[ext_resource type="Texture2D" uid="uid://y7eyx4k4bghp" path="res://Sprites/Menus/Menu Principal/fondo_de_dungeon.jpg" id="2_ehljb"]
+[ext_resource type="Texture2D" uid="uid://ck3lksmqiu8c4" path="res://Sprites/Menus/Menu Principal/Papel_Medieval-removebg-preview.png" id="4_ehljb"]
+[ext_resource type="PackedScene" uid="uid://cddquxk8pu18a" path="res://Escenas/transicion.tscn" id="5_812bn"]
+[ext_resource type="PackedScene" uid="uid://baaiuki6um36b" path="res://Escenas/menu_borrar.tscn" id="5_ai6gf"]
+[ext_resource type="Texture2D" uid="uid://dnoapk37v57r3" path="res://Sprites/Menus/Menu Principal/Papel_Medieval-removebg-preview(focussed).png" id="5_hn74l"]
+[ext_resource type="Script" uid="uid://27v7076ts3om" path="res://Scripts/control_volumen.gd" id="5_t2jpm"]
+[ext_resource type="AudioStream" uid="uid://c4nacjaf3p85d" path="res://Sonidos/Musica/ChillMenu_Loopable.wav" id="7_t2jpm"]
+[ext_resource type="FontFile" uid="uid://dbigpbaurc7h" path="res://Fuentes de Texto/Jersey15-Regular.ttf" id="7_wtdg3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2jpm"]
+texture = ExtResource("2_ehljb")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ehljb"]
+color = Color(0.37162217, 0.3716222, 0.37162215, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_812bn"]
+bg_color = Color(0.20546877, 0.1864056, 0.69853973, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_812bn"]
+color = Color(0.20546877, 0.1864056, 0.69853973, 1)
+thickness = 6
+
+[node name="Menu de Opciones" type="CanvasLayer" unique_id=1434032028]
+script = ExtResource("1_syd2l")
+
+[node name="Panel" type="Panel" parent="." unique_id=1563243995]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_t2jpm")
+
+[node name="Botones" type="Node" parent="." unique_id=1644876832]
+
+[node name="Regresar" parent="Botones" unique_id=182857946 instance=ExtResource("1_6ihi5")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -96.0
+offset_right = 82.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_neighbor_left = NodePath("../Borrar")
+focus_neighbor_top = NodePath("../Color CrossHair")
+theme_override_colors/font_color = Color(0.69359285, 0.09982512, 0.13818663, 1)
+theme_override_colors/font_focus_color = Color(0.69411767, 0.09803922, 0.13725491, 1)
+theme_override_colors/font_pressed_color = Color(0.69411767, 0.09803922, 0.13725491, 1)
+theme_override_colors/font_hover_color = Color(0.69411767, 0.09803922, 0.13725491, 1)
+text = "btn_back"
+
+[node name="Borrar" type="TextureButton" parent="Botones" unique_id=914526496]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -233.0
+offset_right = 216.0
+grow_vertical = 0
+focus_neighbor_top = NodePath("../Control del Volumen del SFX")
+focus_neighbor_right = NodePath("../Regresar")
+texture_normal = ExtResource("4_ehljb")
+texture_focused = ExtResource("5_hn74l")
+
+[node name="Confirmar Borrar" parent="Botones/Borrar" unique_id=302773795 instance=ExtResource("5_ai6gf")]
+layer = 2
+visible = false
+
+[node name="Control del Volumen de la Musica" type="HSlider" parent="Botones" unique_id=304347316]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.0
+offset_top = -82.5
+offset_right = 217.0
+offset_bottom = -66.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../Borrar")
+focus_neighbor_bottom = NodePath("../Control del Volumen del SFX")
+theme_override_styles/slider = SubResource("StyleBoxLine_ehljb")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_812bn")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_812bn")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("5_t2jpm")
+nombre_bus = "Music"
+
+[node name="Control del Volumen del SFX" type="HSlider" parent="Botones" unique_id=1513973618]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.0
+offset_top = 2.5
+offset_right = 217.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../Borrar")
+focus_neighbor_top = NodePath("../Control del Volumen de la Musica")
+focus_neighbor_bottom = NodePath("../Color CrossHair")
+theme_override_styles/slider = SubResource("StyleBoxLine_ehljb")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_812bn")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_812bn")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("5_t2jpm")
+nombre_bus = "SFX"
+
+[node name="Color CrossHair" type="ColorPickerButton" parent="Botones" unique_id=1598483596]
+offset_left = 564.0
+offset_top = 377.0
+offset_right = 786.0
+offset_bottom = 448.0
+focus_neighbor_left = NodePath("../Borrar")
+focus_neighbor_top = NodePath("../Control del Volumen del SFX")
+focus_neighbor_bottom = NodePath("../Regresar")
+color = Color(1, 1, 1, 1)
+
+[node name="Musica de Fondo" type="AudioStreamPlayer" parent="." unique_id=1466930787]
+stream = ExtResource("7_t2jpm")
+volume_db = -4.0
+autoplay = true
+bus = &"Music"
+
+[node name="Label" type="Label" parent="." unique_id=2001184069]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -133.0
+offset_right = 103.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("7_wtdg3")
+theme_override_font_sizes/font_size = 55
+text = "label_volume_music"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Label3" type="Label" parent="." unique_id=777173343]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -227.0
+offset_right = 126.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("7_wtdg3")
+theme_override_font_sizes/font_size = 55
+text = "label_volumen"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Label2" type="Label" parent="." unique_id=22661600]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -49.0
+offset_right = 103.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("7_wtdg3")
+theme_override_font_sizes/font_size = 55
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=1660082692]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = 61.0
+offset_right = -36.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("7_wtdg3")
+theme_override_font_sizes/font_size = 55
+text = "label_crosshair"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Transicion" parent="." unique_id=1047492979 instance=ExtResource("5_812bn")]
+offset_left = 2.0
+offset_top = -15.0
+offset_right = 2.0
+offset_bottom = -15.0
+
+[connection signal="pressed" from="Botones/Regresar" to="." method="_on_regresar_pressed"]
+[connection signal="pressed" from="Botones/Borrar" to="." method="_on_borrar_pressed"]
+[connection signal="value_changed" from="Botones/Control del Volumen de la Musica" to="Botones/Control del Volumen de la Musica" method="_on_value_changed"]
+[connection signal="value_changed" from="Botones/Control del Volumen del SFX" to="Botones/Control del Volumen del SFX" method="_on_value_changed"]
+[connection signal="color_changed" from="Botones/Color CrossHair" to="." method="_on_color_cross_hair_color_changed"]

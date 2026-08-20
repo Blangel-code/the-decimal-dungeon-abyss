@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://c0kgo1mwmw1ih"]
+
+[ext_resource type="Script" uid="uid://bebimai3t2iju" path="res://Scripts/menu_personajes.gd" id="1_fq8nb"]
+[ext_resource type="Texture2D" uid="uid://y7eyx4k4bghp" path="res://Sprites/Menus/Menu Principal/fondo_de_dungeon.jpg" id="2_x3wxh"]
+[ext_resource type="PackedScene" uid="uid://ccs373pmpv4v5" path="res://Escenas/boton_custom_rectangular.tscn" id="3_rscoe"]
+[ext_resource type="FontFile" uid="uid://djofwbh8d02um" path="res://Fuentes de Texto/DancingScript-VariableFont_wght.ttf" id="4_vi4df"]
+[ext_resource type="PackedScene" uid="uid://c5n2gwevfeuia" path="res://Escenas/boton_custom_cuadrado.tscn" id="5_n0yti"]
+[ext_resource type="Texture2D" uid="uid://brv3y4kae7w5a" path="res://Sprites/Personajes/Jugadores/Elf/elf_f_idle_anim_f0.png" id="7_e7cgx"]
+[ext_resource type="Texture2D" uid="uid://bqr1v1m0nx8a6" path="res://Sprites/Personajes/Jugadores/Elf/elf_f_idle_anim_f1.png" id="8_vagce"]
+[ext_resource type="Texture2D" uid="uid://dm0k0pdi3fo6s" path="res://Sprites/Personajes/Jugadores/Elf/elf_f_idle_anim_f2.png" id="9_f26jk"]
+[ext_resource type="Texture2D" uid="uid://buj52oha4nwa2" path="res://Sprites/Personajes/Jugadores/Elf/elf_f_idle_anim_f3.png" id="10_j4dx2"]
+[ext_resource type="Texture2D" uid="uid://yu440wrca0sg" path="res://Sprites/Personajes/Jugadores/Elf 2/elf_m_idle_anim_f0.png" id="11_fbjvi"]
+[ext_resource type="Texture2D" uid="uid://c8qnubbttykhi" path="res://Sprites/Personajes/Jugadores/Elf 2/elf_m_idle_anim_f1.png" id="12_3y6fh"]
+[ext_resource type="Texture2D" uid="uid://dep47bjgqvtdf" path="res://Sprites/Personajes/Jugadores/Elf 2/elf_m_idle_anim_f2.png" id="13_im387"]
+[ext_resource type="Texture2D" uid="uid://rmgyd7awqxe3" path="res://Sprites/Personajes/Jugadores/Elf 2/elf_m_idle_anim_f3.png" id="14_jgcfu"]
+[ext_resource type="Texture2D" uid="uid://hc4g8h0hmqv7" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_idle_anim_f0.png" id="15_nosqu"]
+[ext_resource type="Texture2D" uid="uid://1akmlxnbokae" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_idle_anim_f1.png" id="16_jl0f4"]
+[ext_resource type="Texture2D" uid="uid://dsd88uc3tmq6y" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_idle_anim_f2.png" id="17_nvxm6"]
+[ext_resource type="Texture2D" uid="uid://cb78jjxuhyjrs" path="res://Sprites/Personajes/Jugadores/Knight/knight_f_idle_anim_f3.png" id="18_skpfh"]
+[ext_resource type="Texture2D" uid="uid://bncvys5ulk0t0" path="res://Sprites/Personajes/Jugadores/Knight 2/knight_m_idle_anim_f0.png" id="19_7dio7"]
+[ext_resource type="Texture2D" uid="uid://t27w1e2iu68q" path="res://Sprites/Personajes/Jugadores/Knight 2/knight_m_idle_anim_f1.png" id="20_6k7um"]
+[ext_resource type="Texture2D" uid="uid://cj8umovk6a26i" path="res://Sprites/Personajes/Jugadores/Knight 2/knight_m_idle_anim_f2.png" id="21_1o5ud"]
+[ext_resource type="AudioStream" uid="uid://c5ls3flhpemd2" path="res://Sonidos/Musica/KleptoLindaCavernsB_Loopable.wav" id="22_fq8nb"]
+[ext_resource type="Texture2D" uid="uid://b73ijrxxcr6sn" path="res://Sprites/Personajes/Jugadores/Knight 2/knight_m_idle_anim_f3.png" id="22_qs3ia"]
+[ext_resource type="PackedScene" uid="uid://cddquxk8pu18a" path="res://Escenas/transicion.tscn" id="23_fq8nb"]
+
+[sub_resource type="Theme" id="Theme_un8t6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n26qo"]
+texture = ExtResource("2_x3wxh")
+
+[sub_resource type="LabelSettings" id="LabelSettings_un8t6"]
+font = ExtResource("4_vi4df")
+font_size = 60
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n26qo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_e7cgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vagce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f26jk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_j4dx2")
+}],
+"loop": 1,
+"name": &"elf",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_fbjvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3y6fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_im387")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jgcfu")
+}],
+"loop": 1,
+"name": &"elf_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_nosqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jl0f4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nvxm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_skpfh")
+}],
+"loop": 1,
+"name": &"knight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_7dio7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6k7um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1o5ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qs3ia")
+}],
+"loop": 1,
+"name": &"knight_2",
+"speed": 5.0
+}]
+
+[node name="Menu_personajes" type="Control" unique_id=582276527]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fq8nb")
+
+[node name="Panel" type="Panel" parent="." unique_id=1237348034]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_un8t6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_n26qo")
+
+[node name="Atras" parent="." unique_id=453430933 instance=ExtResource("3_rscoe")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -129.5
+offset_top = -81.0
+offset_right = 129.5
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_neighbor_left = NodePath("../Izquierda")
+focus_neighbor_top = NodePath("../Derecha")
+focus_neighbor_right = NodePath("../Derecha")
+theme_override_colors/font_color = Color(1, 0.24780053, 0.27395758, 1)
+theme_override_colors/font_focus_color = Color(1, 0.24705882, 0.27450982, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.24705882, 0.27450982, 1)
+theme_override_colors/font_hover_color = Color(1, 0.24705882, 0.27450982, 1)
+text = "btn_back"
+
+[node name="Derecha" parent="." unique_id=274867881 instance=ExtResource("5_n0yti")]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 449.0
+offset_right = 698.0
+offset_bottom = 541.0
+focus_neighbor_left = NodePath("../Izquierda")
+focus_neighbor_bottom = NodePath("../Atras")
+text = ">"
+
+[node name="Izquierda" parent="." unique_id=1378386785 instance=ExtResource("5_n0yti")]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 448.0
+offset_right = 553.0
+offset_bottom = 545.0
+focus_neighbor_right = NodePath("../Derecha")
+focus_neighbor_bottom = NodePath("../Atras")
+text = "<"
+
+[node name="Label" type="Label" parent="." unique_id=467178288]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -200.0
+offset_right = 1.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_un8t6")
+horizontal_alignment = 1
+justification_flags = 161
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=965658906]
+position = Vector2(571, 276)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_n26qo")
+animation = &"knight"
+
+[node name="Musica de Fondo" type="AudioStreamPlayer" parent="." unique_id=1973426923]
+stream = ExtResource("22_fq8nb")
+volume_db = -4.0
+autoplay = true
+bus = &"Music"
+
+[node name="Transicion" parent="." unique_id=201259985 instance=ExtResource("23_fq8nb")]
+layout_mode = 1
+
+[connection signal="pressed" from="Atras" to="." method="_on_atras_pressed"]
+[connection signal="pressed" from="Derecha" to="." method="_on_derecha_pressed"]
+[connection signal="pressed" from="Izquierda" to="." method="_on_izquierda_pressed"]

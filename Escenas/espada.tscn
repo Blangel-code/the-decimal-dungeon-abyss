@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://ce11g0774uc6d"]
+
+[ext_resource type="Texture2D" uid="uid://b6fg260xc8h3y" path="res://Sprites/Objetos/Armas/Espadas/Espada_sprite_1.png" id="1_3kn41"]
+[ext_resource type="Script" uid="uid://c7a3u6s0wgmhx" path="res://Scripts/espada.gd" id="1_qxk28"]
+[ext_resource type="Texture2D" uid="uid://c8l2jfynofs8a" path="res://Sprites/Objetos/Armas/Espadas/Espada_sprite_2.png" id="2_qxk28"]
+[ext_resource type="Texture2D" uid="uid://clxlfvixdqrwb" path="res://Sprites/Objetos/Armas/Espadas/Espada_sprite_3.png" id="3_r6rvs"]
+[ext_resource type="Texture2D" uid="uid://ienimx8aw1ki" path="res://Sprites/Objetos/Armas/Espadas/Espada_sprite_4.png" id="4_4e2is"]
+[ext_resource type="AudioStream" uid="uid://cw6damjfahh4m" path="res://Sonidos/Jugador/07_human_atk_sword_1.wav" id="6_r6rvs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3kn41"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3kn41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qxk28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r6rvs")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_4e2is")
+}],
+"loop": 0,
+"name": &"Attack",
+"speed": 6.0
+}]
+
+[node name="Espada" type="Node2D" unique_id=343517350]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_qxk28")
+
+[node name="animacion_espada" type="AnimatedSprite2D" parent="." unique_id=1915794365]
+visible = false
+sprite_frames = SubResource("SpriteFrames_3kn41")
+animation = &"Attack"
+frame = 3
+frame_progress = 1.0
+
+[node name="sonido_espada" type="AudioStreamPlayer2D" parent="." unique_id=154582305]
+stream = ExtResource("6_r6rvs")
+volume_db = 3.0
+bus = &"SFX"
+
+[connection signal="animation_finished" from="animacion_espada" to="." method="_on_animacion_espada_animation_finished"]

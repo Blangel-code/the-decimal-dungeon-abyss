@@ -1,0 +1,410 @@
+[gd_scene format=3 uid="uid://cx6o4d2y14q64"]
+
+[ext_resource type="Texture2D" uid="uid://ba5kda7gfbo7g" path="res://Sprites/Menus/Barras de progresos/Vacios_5_corazones1.png" id="1_u64r6"]
+[ext_resource type="Texture2D" uid="uid://bnqq7wt60ap45" path="res://Sprites/Menus/Barras de progresos/Marco_5_corazones1.png" id="2_c6wk4"]
+[ext_resource type="FontFile" uid="uid://djofwbh8d02um" path="res://Fuentes de Texto/DancingScript-VariableFont_wght.ttf" id="2_imxld"]
+[ext_resource type="Texture2D" uid="uid://u6xotd3vf04x" path="res://Sprites/Menus/Barras de progresos/Lleno_5_corazones1.png" id="3_can3j"]
+[ext_resource type="Texture2D" uid="uid://bwu43tgu64ir8" path="res://Sprites/Menus/Barras de progresos/Vacio_barra de enemigos1.png" id="4_1chh5"]
+[ext_resource type="Texture2D" uid="uid://db6yo2cbd0t4e" path="res://Sprites/Menus/Barras de progresos/Marco_barra de enemigos1.png" id="5_ade8p"]
+[ext_resource type="Texture2D" uid="uid://c3wxs5evdelfw" path="res://Sprites/Menus/Barras de progresos/Lleno_barra de enemigos1.png" id="6_cnlr5"]
+[ext_resource type="Texture2D" uid="uid://bj14b6x17l87c" path="res://Sprites/Objetos/Llave.png" id="7_ade8p"]
+[ext_resource type="Script" uid="uid://dxwj283a4gvfo" path="res://Scripts/inventario.gd" id="7_gjnqx"]
+[ext_resource type="Texture2D" uid="uid://cqqq24d6vclhs" path="res://Sprites/Objetos/flask_red.png" id="8_cnlr5"]
+[ext_resource type="Texture2D" uid="uid://swrqg36aqa4i" path="res://Sprites/Objetos/Armas/Arco/weapon_arrow.png" id="9_u64r6"]
+[ext_resource type="FontFile" uid="uid://dbigpbaurc7h" path="res://Fuentes de Texto/Jersey15-Regular.ttf" id="10_dmsnt"]
+[ext_resource type="Texture2D" uid="uid://lun0odx50eyx" path="res://Sprites/Menus/Teclas/keyboard-Q-16.png" id="11_2iaoq"]
+[ext_resource type="Texture2D" uid="uid://cjj5yarpiu3d1" path="res://Sprites/Objetos/flask_big_red.png" id="11_o4q4p"]
+[ext_resource type="Texture2D" uid="uid://b7h3yfd77c87u" path="res://Sprites/Objetos/ruby.png" id="12_c6wk4"]
+[ext_resource type="Texture2D" uid="uid://dbkcutollt1wn" path="res://Sprites/Objetos/Armas/Espadas/weapon_golden_sword.png" id="12_imxld"]
+[ext_resource type="Texture2D" uid="uid://bialqxd0j7h36" path="res://Sprites/Menus/Teclas/keyboard-E-16.png" id="13_kpam3"]
+[ext_resource type="Texture2D" uid="uid://dah2vufiiu6cp" path="res://Sprites/Menus/Teclas/mouse-left-16.png" id="15_kpam3"]
+[ext_resource type="Texture2D" uid="uid://cflsivclt2gfw" path="res://Sprites/Menus/Teclas/mouse-right-16.png" id="17_b7vo3"]
+[ext_resource type="Texture2D" uid="uid://8gja34534nuk" path="res://Sprites/Menus/Teclas/xbox-LB-16.png" id="20_te6yw"]
+[ext_resource type="Texture2D" uid="uid://dw36bsglopwgq" path="res://Sprites/Menus/Teclas/xbox-RB-16.png" id="21_dmsnt"]
+[ext_resource type="Texture2D" uid="uid://bi1xvoecw2cpj" path="res://Sprites/Menus/Teclas/xbox-RT-16.png" id="22_gpcv2"]
+[ext_resource type="Texture2D" uid="uid://c63b4hryjo6ao" path="res://Sprites/Menus/Teclas/xbox-LT-16.png" id="23_2pvo5"]
+[ext_resource type="Texture2D" uid="uid://3rm43juor35b" path="res://Sprites/Menus/Teclas/button-small-potion.png" id="24_clpgr"]
+[ext_resource type="Script" uid="uid://ck1enedb6hx4v" path="res://Scripts/boton.gd" id="25_rbsud"]
+[ext_resource type="Texture2D" uid="uid://dyrgne8k7x4au" path="res://Sprites/Menus/Teclas/button-big-potion.png" id="26_md15c"]
+[ext_resource type="PackedScene" uid="uid://b0jixdx10frb8" path="res://Escenas/joystick.tscn" id="27_mxa2e"]
+[ext_resource type="Texture2D" uid="uid://bpegxnbk8f53l" path="res://Sprites/Menus/Teclas/button_empty.png" id="28_55wle"]
+[ext_resource type="Texture2D" uid="uid://dynem80dqqcnp" path="res://Sprites/Objetos/Armas/Espadas/weapon_red_gem_sword.png" id="29_0ap4n"]
+[ext_resource type="Texture2D" uid="uid://brxau7s5035rl" path="res://Sprites/Objetos/Armas/Arco/Arco_sprite_1.png" id="30_bh7pb"]
+[ext_resource type="Texture2D" uid="uid://cxudh37pohk6p" path="res://Sprites/Menus/Teclas/button-pausepng.png" id="31_uoojb"]
+[ext_resource type="PackedScene" uid="uid://dtahwsspl61n6" path="res://Escenas/joystick_move.tscn" id="32_l2ox5"]
+
+[sub_resource type="Animation" id="Animation_imxld"]
+resource_name = "Nivel Pasado"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n4bue"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n4bue"]
+_data = {
+&"Nivel Pasado": SubResource("Animation_imxld"),
+&"RESET": SubResource("Animation_n4bue")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnlr5"]
+atlas = ExtResource("7_ade8p")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veay1"]
+atlas = ExtResource("7_ade8p")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjnqx"]
+atlas = ExtResource("7_ade8p")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4q4p"]
+atlas = ExtResource("7_ade8p")
+region = Rect2(0, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u64r6"]
+atlas = ExtResource("7_ade8p")
+region = Rect2(20, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6wk4"]
+atlas = ExtResource("7_ade8p")
+region = Rect2(40, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_can3j"]
+atlas = ExtResource("7_ade8p")
+region = Rect2(0, 40, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0ugv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnlr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veay1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjnqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4q4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u64r6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6wk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_can3j")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx30q"]
+size = Vector2(17.05, 16.08)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_di07r"]
+size = Vector2(17.325, 17.005)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opk0f"]
+size = Vector2(18, 17)
+
+[node name="ui_usuario" type="CanvasLayer" unique_id=1466650000]
+script = ExtResource("7_gjnqx")
+
+[node name="Nivel" type="Label" parent="." unique_id=74622982]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 60.0
+offset_right = 103.0
+offset_bottom = 121.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_imxld")
+theme_override_font_sizes/font_size = 46
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nivel" unique_id=1876704411]
+libraries/ = SubResource("AnimationLibrary_n4bue")
+
+[node name="vida" type="TextureProgressBar" parent="." unique_id=1719730266]
+offset_left = 4.9999995
+offset_top = 5.0
+offset_right = 44.0
+offset_bottom = 17.0
+scale = Vector2(5, 5)
+layout_direction = 2
+max_value = 25.0
+texture_under = ExtResource("1_u64r6")
+texture_over = ExtResource("2_c6wk4")
+texture_progress = ExtResource("3_can3j")
+
+[node name="enemigos" type="TextureProgressBar" parent="." unique_id=1427324189]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -219.0
+offset_right = -193.0
+offset_bottom = 12.0
+grow_horizontal = 0
+scale = Vector2(8, 8)
+size_flags_horizontal = 8
+max_value = 1.0
+texture_under = ExtResource("4_1chh5")
+texture_over = ExtResource("5_ade8p")
+texture_progress = ExtResource("6_cnlr5")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1898339514]
+offset_top = 75.0
+offset_right = 36.0
+offset_bottom = 116.0
+scale = Vector2(3.5, 3.5)
+columns = 2
+
+[node name="big_potion" type="TextureRect" parent="GridContainer" unique_id=1069227444]
+layout_mode = 2
+texture = ExtResource("11_o4q4p")
+
+[node name="Label" type="Label" parent="GridContainer/big_potion" unique_id=447077203]
+top_level = true
+layout_mode = 0
+offset_left = 41.0
+offset_top = 105.0
+offset_right = 67.0
+offset_bottom = 151.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dmsnt")
+theme_override_font_sizes/font_size = 37
+
+[node name="small_potion" type="TextureRect" parent="GridContainer" unique_id=830865925]
+layout_mode = 2
+texture = ExtResource("8_cnlr5")
+
+[node name="Label" type="Label" parent="GridContainer/small_potion" unique_id=1624213661]
+top_level = true
+layout_mode = 0
+offset_left = 103.0
+offset_top = 105.0
+offset_right = 128.0
+offset_bottom = 151.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dmsnt")
+theme_override_font_sizes/font_size = 34
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer" unique_id=2023959615]
+layout_mode = 2
+texture = ExtResource("12_imxld")
+stretch_mode = 3
+
+[node name="flechas" type="TextureRect" parent="GridContainer" unique_id=1716361141]
+layout_mode = 2
+texture = ExtResource("9_u64r6")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="GridContainer/flechas" unique_id=1857755613]
+top_level = true
+layout_mode = 0
+offset_left = 103.0
+offset_top = 196.0
+offset_right = 128.0
+offset_bottom = 242.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dmsnt")
+theme_override_font_sizes/font_size = 34
+
+[node name="animacion_llave" type="AnimatedSprite2D" parent="GridContainer" unique_id=2008654306]
+position = Vector2(8.857142, 52.857143)
+scale = Vector2(0.8571428, 0.8571428)
+sprite_frames = SubResource("SpriteFrames_t0ugv")
+autoplay = "default"
+
+[node name="ruby" type="TextureRect" parent="." unique_id=173936754]
+offset_left = 1035.0
+offset_top = 91.0
+offset_right = 1067.0
+offset_bottom = 123.0
+scale = Vector2(3, 3)
+texture = ExtResource("12_c6wk4")
+
+[node name="Label" type="Label" parent="ruby" unique_id=212020614]
+top_level = true
+layout_mode = 0
+offset_left = 1014.0
+offset_top = 153.0
+offset_right = 1131.0
+offset_bottom = 213.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dmsnt")
+theme_override_font_sizes/font_size = 43
+
+[node name="botones_pc" type="Control" parent="." unique_id=1697590997]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="botones_pc" unique_id=1177787520]
+layout_mode = 0
+offset_left = 29.000004
+offset_top = 76.0
+offset_right = 49.000004
+offset_bottom = 92.0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("11_2iaoq")
+
+[node name="TextureRect2" type="TextureRect" parent="botones_pc" unique_id=699048543]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 75.0
+offset_right = 115.0
+offset_bottom = 91.0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("13_kpam3")
+
+[node name="TextureRect3" type="TextureRect" parent="botones_pc" unique_id=1069657905]
+layout_mode = 0
+offset_left = 26.999998
+offset_top = 145.0
+offset_right = 47.0
+offset_bottom = 161.0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("15_kpam3")
+
+[node name="TextureRect4" type="TextureRect" parent="botones_pc" unique_id=1540926011]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 145.0
+offset_right = 119.0
+offset_bottom = 161.0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("17_b7vo3")
+
+[node name="botones_mando" type="Control" parent="." unique_id=1413893482]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="botones_mando" unique_id=108868648]
+layout_mode = 0
+offset_left = 29.000004
+offset_top = 76.0
+offset_right = 49.000004
+offset_bottom = 92.0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("20_te6yw")
+
+[node name="TextureRect2" type="TextureRect" parent="botones_mando" unique_id=442654398]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 75.0
+offset_right = 115.0
+offset_bottom = 91.0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("21_dmsnt")
+
+[node name="TextureRect3" type="TextureRect" parent="botones_mando" unique_id=417951217]
+layout_mode = 0
+offset_left = 26.999998
+offset_top = 145.0
+offset_right = 47.0
+offset_bottom = 161.0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("22_gpcv2")
+
+[node name="TextureRect4" type="TextureRect" parent="botones_mando" unique_id=1463773056]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 145.0
+offset_right = 119.0
+offset_bottom = 161.0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("23_2pvo5")
+
+[node name="botones_telefono" type="Control" parent="." unique_id=1918260755]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="small_potion" type="TouchScreenButton" parent="botones_telefono" unique_id=1025258501]
+position = Vector2(104, 306)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("24_clpgr")
+shape = SubResource("RectangleShape2D_jx30q")
+action = "use_small_potion"
+script = ExtResource("25_rbsud")
+
+[node name="big_potion" type="TouchScreenButton" parent="botones_telefono" unique_id=2117517493]
+position = Vector2(6.000061, 306)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("26_md15c")
+shape = SubResource("RectangleShape2D_di07r")
+action = "use_big_potion"
+script = ExtResource("25_rbsud")
+
+[node name="Joystick" parent="botones_telefono" unique_id=373617097 instance=ExtResource("27_mxa2e")]
+position = Vector2(997, 517)
+
+[node name="cambio_arma" type="TouchScreenButton" parent="botones_telefono" unique_id=595356943]
+position = Vector2(982.00006, 233)
+scale = Vector2(6.0499988, 6.049998)
+texture_normal = ExtResource("28_55wle")
+shape = SubResource("RectangleShape2D_opk0f")
+script = ExtResource("25_rbsud")
+
+[node name="espada" type="Sprite2D" parent="botones_telefono/cambio_arma" unique_id=805530994]
+visible = false
+position = Vector2(9.852936, 9.411766)
+scale = Vector2(0.5215336, 0.52153355)
+texture = ExtResource("29_0ap4n")
+
+[node name="arco" type="Sprite2D" parent="botones_telefono/cambio_arma" unique_id=915310313]
+position = Vector2(9.117634, 6.911766)
+scale = Vector2(0.63130254, 0.63130254)
+texture = ExtResource("30_bh7pb")
+
+[node name="pause" type="TouchScreenButton" parent="botones_telefono" unique_id=1183943237]
+modulate = Color(0.8943183, 1.9656742, 1.6495931, 1)
+position = Vector2(520, -12)
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("31_uoojb")
+action = "pausar_juego"
+
+[node name="Joystick_move" parent="botones_telefono" unique_id=1705408671 instance=ExtResource("32_l2ox5")]
+position = Vector2(148, 521)
+
+[connection signal="pressed" from="botones_telefono/small_potion" to="botones_telefono/small_potion" method="_on_pressed"]
+[connection signal="released" from="botones_telefono/small_potion" to="botones_telefono/small_potion" method="_on_released"]
+[connection signal="pressed" from="botones_telefono/big_potion" to="botones_telefono/big_potion" method="_on_pressed"]
+[connection signal="released" from="botones_telefono/big_potion" to="botones_telefono/big_potion" method="_on_released"]
+[connection signal="pressed" from="botones_telefono/cambio_arma" to="botones_telefono/Joystick" method="_on_cambio_arma_pressed"]
+[connection signal="pressed" from="botones_telefono/cambio_arma" to="botones_telefono/cambio_arma" method="_on_pressed"]
+[connection signal="released" from="botones_telefono/cambio_arma" to="botones_telefono/cambio_arma" method="_on_released"]

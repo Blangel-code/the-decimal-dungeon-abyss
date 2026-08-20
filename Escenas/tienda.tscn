@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://bxhv6ey6menn6"]
+
+[ext_resource type="FontFile" uid="uid://djofwbh8d02um" path="res://Fuentes de Texto/DancingScript-VariableFont_wght.ttf" id="1_4xubq"]
+[ext_resource type="Texture2D" uid="uid://y7eyx4k4bghp" path="res://Sprites/Menus/Menu Principal/fondo_de_dungeon.jpg" id="1_50q1o"]
+[ext_resource type="Script" uid="uid://f41lk8p6xmew" path="res://Scripts/tienda.gd" id="1_a2w3w"]
+[ext_resource type="Texture2D" uid="uid://dbkcutollt1wn" path="res://Sprites/Objetos/Armas/Espadas/weapon_golden_sword.png" id="1_lmasu"]
+[ext_resource type="PackedScene" uid="uid://ccs373pmpv4v5" path="res://Escenas/boton_custom_rectangular.tscn" id="3_50q1o"]
+[ext_resource type="Texture2D" uid="uid://dk0a50olhx3ys" path="res://Sprites/Objetos/ui_heart_full.png" id="5_7flnv"]
+[ext_resource type="FontFile" uid="uid://dbigpbaurc7h" path="res://Fuentes de Texto/Jersey15-Regular.ttf" id="6_lpnfq"]
+[ext_resource type="Texture2D" uid="uid://b7h3yfd77c87u" path="res://Sprites/Objetos/ruby.png" id="8_gvbfd"]
+[ext_resource type="PackedScene" uid="uid://cddquxk8pu18a" path="res://Escenas/transicion.tscn" id="9_gvbfd"]
+[ext_resource type="AudioStream" uid="uid://dkoxowsimq5yv" path="res://Sonidos/Musica/KleptoLindaCavernsA_Loopable.wav" id="10_56r47"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bfaun"]
+load_path = "res://.godot/imported/Boton Rectangular Up.png-9a111b8d2ba19deb1a506b9b5ef9534f.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_56r47"]
+content_margin_bottom = 19.0
+texture = SubResource("CompressedTexture2D_bfaun")
+
+[node name="Tienda" type="Control" unique_id=139352684]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a2w3w")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=314436831]
+modulate = Color(0.5106012, 0.5106013, 0.5106012, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_50q1o")
+
+[node name="Damage" type="Control" parent="." unique_id=1432441195]
+anchors_preset = 0
+offset_left = 164.0
+offset_top = 75.0
+offset_right = 418.0
+offset_bottom = 578.0
+
+[node name="Label" type="Label" parent="Damage" unique_id=1491273386]
+layout_mode = 0
+offset_right = 254.0
+offset_bottom = 85.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("1_4xubq")
+theme_override_font_sizes/font_size = 70
+text = "label_damage"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="TextureRect" type="TextureRect" parent="Damage" unique_id=1419948869]
+layout_mode = 0
+offset_top = 89.0
+offset_right = 254.0
+offset_bottom = 343.0
+texture = ExtResource("1_lmasu")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="comprar_damage" parent="Damage" unique_id=1921387262 instance=ExtResource("3_50q1o")]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 347.0
+offset_right = 227.0
+offset_bottom = 442.0
+focus_neighbor_right = NodePath("../../Life/comprar_life")
+focus_neighbor_bottom = NodePath("../../Salir")
+theme_override_colors/font_color = Color(0.33726922, 0.61855656, 0.23735505, 1)
+theme_override_colors/font_focus_color = Color(0.3372549, 0.61960787, 0.23921569, 1)
+theme_override_colors/font_pressed_color = Color(0.3372549, 0.61960787, 0.23921569, 1)
+theme_override_colors/font_hover_color = Color(0.3372549, 0.61960787, 0.23921569, 1)
+text = "btn_purchase"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Damage" unique_id=1225621261]
+layout_mode = 0
+offset_top = 453.0
+offset_right = 254.0
+offset_bottom = 504.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("6_lpnfq")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "5"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="stats_damage" type="RichTextLabel" parent="Damage" unique_id=335569325]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 192.0
+offset_right = 393.0
+offset_bottom = 264.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("1_4xubq")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="Life" type="Control" parent="." unique_id=825348265]
+anchors_preset = 0
+offset_left = 653.0
+offset_top = 75.0
+offset_right = 907.0
+offset_bottom = 578.0
+
+[node name="Label" type="Label" parent="Life" unique_id=1091541072]
+layout_mode = 0
+offset_right = 254.0
+offset_bottom = 85.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("1_4xubq")
+theme_override_font_sizes/font_size = 70
+text = "label_life"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Life" unique_id=1619955979]
+layout_mode = 0
+offset_top = 89.0
+offset_right = 254.0
+offset_bottom = 343.0
+texture = ExtResource("5_7flnv")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="comprar_life" parent="Life" unique_id=1739546014 instance=ExtResource("3_50q1o")]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 347.0
+offset_right = 231.0
+offset_bottom = 442.0
+focus_neighbor_left = NodePath("../../Damage/comprar_damage")
+focus_neighbor_bottom = NodePath("../../Salir")
+theme_override_colors/font_color = Color(0.33726922, 0.61855656, 0.23735505, 1)
+theme_override_colors/font_focus_color = Color(0.3372549, 0.61960787, 0.23921569, 1)
+theme_override_colors/font_pressed_color = Color(0.3372549, 0.61960787, 0.23921569, 1)
+theme_override_colors/font_hover_color = Color(0.3372549, 0.61960787, 0.23921569, 1)
+theme_override_colors/font_disabled_color = Color(0.3372549, 0.61960787, 0.23921569, 1)
+theme_override_styles/disabled = SubResource("StyleBoxTexture_56r47")
+text = "btn_purchase"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Life" unique_id=973305747]
+layout_mode = 0
+offset_top = 453.0
+offset_right = 254.0
+offset_bottom = 504.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("6_lpnfq")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "5"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="stats_life" type="RichTextLabel" parent="Life" unique_id=1027821829]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 192.0
+offset_right = 499.0
+offset_bottom = 264.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("1_4xubq")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="Salir" parent="." unique_id=1540382753 instance=ExtResource("3_50q1o")]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 570.0
+offset_right = 655.0
+offset_bottom = 649.0
+focus_neighbor_left = NodePath("../Damage/comprar_damage")
+focus_neighbor_top = NodePath("../Damage/comprar_damage")
+focus_neighbor_right = NodePath("../Life/comprar_life")
+theme_override_colors/font_color = Color(1, 0.24780053, 0.27395758, 1)
+theme_override_colors/font_focus_color = Color(1, 0.24705882, 0.27450982, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.24705882, 0.27450982, 1)
+theme_override_colors/font_hover_color = Color(1, 0.24705882, 0.27450982, 1)
+text = "btn_back"
+
+[node name="ruby" type="TextureRect" parent="." unique_id=82274959]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_right = -96.0
+offset_bottom = 32.0
+grow_horizontal = 0
+scale = Vector2(4, 4)
+texture = ExtResource("8_gvbfd")
+
+[node name="cantidad_ruby" type="Label" parent="ruby" unique_id=1022770638]
+top_level = true
+layout_mode = 0
+offset_left = 1028.0
+offset_top = 100.0
+offset_right = 1134.0
+offset_bottom = 171.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("6_lpnfq")
+theme_override_font_sizes/font_size = 70
+
+[node name="Transicion" parent="." unique_id=1172406220 instance=ExtResource("9_gvbfd")]
+layout_mode = 1
+
+[node name="Musica de Fondo" type="AudioStreamPlayer2D" parent="." unique_id=570660823]
+stream = ExtResource("10_56r47")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="Damage/comprar_damage" to="." method="_on_comprar_damage_pressed"]
+[connection signal="pressed" from="Life/comprar_life" to="." method="_on_comprar_life_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]

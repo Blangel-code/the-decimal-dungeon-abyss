@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c8fw4vhqq0dwr"]
+
+[ext_resource type="Script" uid="uid://b88vfp3h700p8" path="res://Scripts/objeto_suelo.gd" id="1_di77h"]
+[ext_resource type="Texture2D" uid="uid://cjj5yarpiu3d1" path="res://Sprites/Objetos/flask_big_red.png" id="2_ua6t8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m62fp"]
+size = Vector2(16, 16)
+
+[node name="big_potion" type="Area2D" unique_id=404059094]
+script = ExtResource("1_di77h")
+nombre_objeto = "big_potion"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=243502821]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_m62fp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1144335527]
+texture = ExtResource("2_ua6t8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

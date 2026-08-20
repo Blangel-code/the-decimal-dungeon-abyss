@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://c572g25qpxtcg"]
+
+[ext_resource type="Script" uid="uid://blx13umry40nl" path="res://Scripts/menu_nombre.gd" id="1_kc25p"]
+[ext_resource type="FontFile" uid="uid://djofwbh8d02um" path="res://Fuentes de Texto/DancingScript-VariableFont_wght.ttf" id="2_l0sfl"]
+[ext_resource type="PackedScene" uid="uid://ccs373pmpv4v5" path="res://Escenas/boton_custom_rectangular.tscn" id="3_1ryml"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0sfl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.47079715, 0.45411357, 0.17558163, 0.21900001)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="menu_nombre" type="Control" unique_id=311443667]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kc25p")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1962581182]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = -103.0
+offset_right = 279.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../Submit")
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_l0sfl")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_l0sfl")
+placeholder_text = "text_name"
+max_length = 9
+
+[node name="Submit" parent="." unique_id=1231721910 instance=ExtResource("3_1ryml")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -159.0
+offset_top = -254.0
+offset_right = 160.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_neighbor_top = NodePath("../LineEdit")
+theme_override_colors/font_color = Color(0.4101747, 0.6168384, 0.3366769, 1)
+theme_override_colors/font_focus_color = Color(0.4117647, 0.6156863, 0.3372549, 1)
+theme_override_colors/font_pressed_color = Color(0.4117647, 0.6156863, 0.3372549, 1)
+theme_override_colors/font_hover_color = Color(0.4117647, 0.6156863, 0.3372549, 1)
+text = "btn_submit"
+
+[connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c5n2gwevfeuia"]
+
+[ext_resource type="FontFile" uid="uid://dbigpbaurc7h" path="res://Fuentes de Texto/Jersey15-Regular.ttf" id="1_yo6w8"]
+[ext_resource type="Texture2D" uid="uid://dq2y8g3r3s76a" path="res://Sprites/Menus/Menu Principal/Boton Cuadrado Up.png" id="2_ofvwf"]
+[ext_resource type="Texture2D" uid="uid://c3jqcegduftkt" path="res://Sprites/Menus/Menu Principal/Boton Cuadrado Down.png" id="3_kvvgk"]
+[ext_resource type="Script" uid="uid://c87xymamagjdu" path="res://Scripts/boton_custom.gd" id="4_45mjo"]
+[ext_resource type="AudioStream" uid="uid://bbhu5pqro5ndk" path="res://Sonidos/Objetos/03.3 Boton Presionado.wav" id="5_xma7b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5elgm"]
+content_margin_bottom = 19.0
+texture = ExtResource("2_ofvwf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gc67i"]
+texture = ExtResource("3_kvvgk")
+modulate_color = Color(0.542318, 0.542318, 0.542318, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5c8e4"]
+load_path = "res://.godot/imported/Boton Cuadrado Up.png-3f5fc860b27ad4d806a028591671f002.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5c8e4"]
+texture = SubResource("CompressedTexture2D_5c8e4")
+modulate_color = Color(0.542318, 0.542318, 0.542318, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c8e4"]
+bg_color = Color(0, 0, 0, 0.58000004)
+
+[node name="boton_custom_cuadrado" type="Button" unique_id=1091837291]
+custom_minimum_size = Vector2(24, 24)
+offset_right = 24.0
+offset_bottom = 24.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("1_yo6w8")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_5elgm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gc67i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5c8e4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5c8e4")
+keep_pressed_outside = true
+clip_text = true
+script = ExtResource("4_45mjo")
+
+[node name="sonido_presionado" type="AudioStreamPlayer2D" parent="." unique_id=2122013963]
+stream = ExtResource("5_xma7b")
+volume_db = 10.0
+bus = &"SFX"
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

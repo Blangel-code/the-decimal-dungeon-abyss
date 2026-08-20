@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://beasfiww13vt2"]
+
+[ext_resource type="Script" uid="uid://76s26mar57nl" path="res://Scripts/pantalla_de_carga.gd" id="1_5lv4j"]
+[ext_resource type="FontFile" uid="uid://djofwbh8d02um" path="res://Fuentes de Texto/DancingScript-VariableFont_wght.ttf" id="2_5e04t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47iul"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_5e04t"]
+length = 0.001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["LOADING."]
+}
+
+[sub_resource type="Animation" id="Animation_hrof1"]
+resource_name = "carga_en"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["LOADING.", "LOADING..", "LOADING..."]
+}
+
+[sub_resource type="Animation" id="Animation_5lv4j"]
+resource_name = "carga_es"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["CARGANDO.", "CARGANDO..", "CARGANDO..."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hrof1"]
+_data = {
+&"RESET": SubResource("Animation_5e04t"),
+&"carga_en": SubResource("Animation_hrof1"),
+&"carga_es": SubResource("Animation_5lv4j")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5e04t"]
+
+[node name="Pantalla de Carga" type="CanvasLayer" unique_id=97130358]
+script = ExtResource("1_5lv4j")
+
+[node name="Panel" type="Panel" parent="." unique_id=216919381]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_47iul")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1952036919]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -56.0
+offset_right = 134.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5e04t")
+theme_override_font_sizes/font_size = 50
+text = "LOADING."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel/Label" unique_id=360122339]
+libraries/ = SubResource("AnimationLibrary_hrof1")
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel" unique_id=1953101105]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = 11.5
+offset_right = 206.0
+offset_bottom = 53.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5e04t")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/background = SubResource("StyleBoxEmpty_5e04t")

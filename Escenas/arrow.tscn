@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d28utrajaykxo"]
+
+[ext_resource type="Script" uid="uid://b88vfp3h700p8" path="res://Scripts/objeto_suelo.gd" id="1_o1whm"]
+[ext_resource type="Texture2D" uid="uid://swrqg36aqa4i" path="res://Sprites/Objetos/Armas/Arco/weapon_arrow.png" id="2_0ku07"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m62fp"]
+size = Vector2(12, 24)
+
+[node name="arrow" type="Area2D" unique_id=1593370686]
+script = ExtResource("1_o1whm")
+nombre_objeto = "arrow"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917532155]
+shape = SubResource("RectangleShape2D_m62fp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1060457604]
+texture = ExtResource("2_0ku07")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dvtjat6ow71g6"]
+
+[ext_resource type="FontFile" uid="uid://dbigpbaurc7h" path="res://Fuentes de Texto/Jersey15-Regular.ttf" id="1_1nvk1"]
+
+[resource]
+font = ExtResource("1_1nvk1")
+font_size = 25
+font_color = Color(0.5806647, 0.19975856, 0.4621187, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)

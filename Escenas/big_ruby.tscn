@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bvmukf8jp77jm"]
+
+[ext_resource type="Script" uid="uid://b88vfp3h700p8" path="res://Scripts/objeto_suelo.gd" id="1_utwg3"]
+[ext_resource type="Texture2D" uid="uid://b7h3yfd77c87u" path="res://Sprites/Objetos/ruby.png" id="2_ls5oy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0mgr"]
+size = Vector2(20, 38)
+
+[node name="big_ruby" type="Area2D" unique_id=253362335]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_utwg3")
+nombre_objeto = "big_ruby"
+metadata/_custom_type_script = "uid://b88vfp3h700p8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1180481860]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_i0mgr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=257947688]
+texture = ExtResource("2_ls5oy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://cukx4haaqn43p"]
+
+[ext_resource type="Script" uid="uid://cpjfyncdtc1s6" path="res://Scripts/menu_victoria.gd" id="1_ws5bq"]
+[ext_resource type="FontFile" uid="uid://djofwbh8d02um" path="res://Fuentes de Texto/DancingScript-VariableFont_wght.ttf" id="3_6x2kx"]
+[ext_resource type="PackedScene" uid="uid://ccs373pmpv4v5" path="res://Escenas/boton_custom_rectangular.tscn" id="4_sgc8u"]
+[ext_resource type="PackedScene" uid="uid://c572g25qpxtcg" path="res://Escenas/menu_nombre.tscn" id="4_ws5bq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ws5bq"]
+bg_color = Color(0, 0, 0, 0.785)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_size = 14
+
+[sub_resource type="Animation" id="Animation_ws5bq"]
+resource_name = "Fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bx702"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y5lsp"]
+resource_name = "Win"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Control:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6x2kx"]
+resource_name = "place_name"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../menu_nombre:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../menu_nombre:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.75)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6x2kx"]
+_data = {
+&"Fade in": SubResource("Animation_ws5bq"),
+&"RESET": SubResource("Animation_bx702"),
+&"Win": SubResource("Animation_y5lsp"),
+&"place_name": SubResource("Animation_6x2kx")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_ib004"]
+font = ExtResource("3_6x2kx")
+font_size = 50
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+
+[node name="menu_victoria" type="CanvasLayer" unique_id=1645923976]
+process_mode = 2
+visible = false
+script = ExtResource("1_ws5bq")
+
+[node name="ColorRect" type="Panel" parent="." unique_id=1095597467]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ws5bq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=501899257]
+libraries/ = SubResource("AnimationLibrary_6x2kx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1807845365]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -435.0
+offset_top = -277.0
+offset_right = 435.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=893822648]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control" unique_id=807698909]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 182.0
+offset_right = 914.0
+offset_bottom = 242.0
+text = "label_victory2"
+label_settings = SubResource("LabelSettings_ib004")
+horizontal_alignment = 1
+
+[node name="Tiempo" type="Label" parent="Control" unique_id=1379369340]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 250.0
+offset_right = 893.0
+offset_bottom = 310.0
+text = "00:00"
+label_settings = SubResource("LabelSettings_ib004")
+horizontal_alignment = 1
+
+[node name="regresar_menu" parent="Control" unique_id=543435417 instance=ExtResource("4_sgc8u")]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 314.0
+offset_right = 824.0
+offset_bottom = 421.5
+theme_override_colors/font_color = Color(1, 0.24780053, 0.27395758, 1)
+theme_override_colors/font_focus_color = Color(1, 0.24705882, 0.27450982, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.24705882, 0.27450982, 1)
+theme_override_colors/font_hover_color = Color(1, 0.24705882, 0.27450982, 1)
+theme_override_font_sizes/font_size = 60
+text = "btn_back_menu"
+
+[node name="menu_nombre" parent="." unique_id=1130903206 instance=ExtResource("4_ws5bq")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Control/regresar_menu" to="." method="_on_regresar_menu_pressed"]

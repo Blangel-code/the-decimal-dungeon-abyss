@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b5vfxgadiefck"]
+
+[ext_resource type="Script" uid="uid://b88vfp3h700p8" path="res://Scripts/objeto_suelo.gd" id="1_gisn5"]
+[ext_resource type="Texture2D" uid="uid://b7h3yfd77c87u" path="res://Sprites/Objetos/ruby.png" id="2_rou4k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0mgr"]
+size = Vector2(20, 38)
+
+[node name="small_ruby" type="Area2D" unique_id=404272782]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_gisn5")
+nombre_objeto = "small_ruby"
+metadata/_custom_type_script = "uid://b88vfp3h700p8"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1520621333]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_i0mgr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1426826043]
+modulate = Color(0.15972757, 0.013331287, 0.025344884, 1)
+texture = ExtResource("2_rou4k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

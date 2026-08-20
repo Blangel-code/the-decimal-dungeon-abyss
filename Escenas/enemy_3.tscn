@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://wh0nvj4g3uy5"]
+
+[ext_resource type="Script" uid="uid://b1s1kqua45uk6" path="res://Scripts/enemy_mage.gd" id="1_wuieg"]
+[ext_resource type="Texture2D" uid="uid://sh7txxkqi4at" path="res://Sprites/Personajes/Anim_muerte.png" id="2_ayjsl"]
+[ext_resource type="Texture2D" uid="uid://d1kp5dkjuwxen" path="res://Sprites/Personajes/Enemigos/Necromancer/necromancer_anim_f0.png" id="2_wuieg"]
+[ext_resource type="Texture2D" uid="uid://c7nuw6el76gt" path="res://Sprites/Personajes/Enemigos/Necromancer/necromancer_anim_f1.png" id="3_ayjsl"]
+[ext_resource type="Texture2D" uid="uid://c420lflr3xmef" path="res://Sprites/Personajes/Enemigos/Necromancer/necromancer_anim_f2.png" id="4_vix25"]
+[ext_resource type="Texture2D" uid="uid://ca2pss6wl0tcx" path="res://Sprites/Personajes/Enemigos/Necromancer/necromancer_anim_f3.png" id="5_qgdvh"]
+[ext_resource type="AudioStream" uid="uid://b4bsuldo7786a" path="res://Sonidos/Enemigos/Hit/11.3 Necromancer Hit.wav" id="7_ayjsl"]
+[ext_resource type="AudioStream" uid="uid://jxksycdpeotw" path="res://Sonidos/Enemigos/Atk/18 Carga Hechizo.wav" id="7_wuieg"]
+[ext_resource type="Texture2D" uid="uid://b41cbq3dylgsi" path="res://Sprites/Objetos/Armas/Baculos/animacion_baculo_rojo.png" id="8_ayjsl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj12m"]
+size = Vector2(14, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdpu2"]
+atlas = ExtResource("2_ayjsl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_holyc"]
+atlas = ExtResource("2_ayjsl")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctkci"]
+atlas = ExtResource("2_ayjsl")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qa8x"]
+atlas = ExtResource("2_ayjsl")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pvjha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdpu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_holyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctkci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qa8x")
+}],
+"loop": 0,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qgdvh")
+}],
+"loop": 0,
+"name": &"Hit",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wuieg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ayjsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vix25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qgdvh")
+}],
+"loop": 1,
+"name": &"Walking",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vix25"]
+atlas = ExtResource("8_ayjsl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgdvh"]
+atlas = ExtResource("8_ayjsl")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a23dh"]
+atlas = ExtResource("8_ayjsl")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmhs8"]
+atlas = ExtResource("8_ayjsl")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duycr"]
+atlas = ExtResource("8_ayjsl")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ixbh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vix25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgdvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a23dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmhs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duycr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy_3" type="CharacterBody2D" unique_id=1447276457 node_paths=PackedStringArray("arma_enemigo") groups=["enemys"]]
+script = ExtResource("1_wuieg")
+vida = 8
+damage = 5
+arma_enemigo = NodePath("Animacion_del_arma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1107448067]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_yj12m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=342666990]
+sprite_frames = SubResource("SpriteFrames_pvjha")
+animation = &"Walking"
+autoplay = "Walking"
+
+[node name="Timer" type="Timer" parent="." unique_id=126700478]
+wait_time = 4.0
+autostart = true
+
+[node name="sonido_recibe_golpe" type="AudioStreamPlayer2D" parent="." unique_id=1926753733]
+stream = ExtResource("7_ayjsl")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="enemigo_ataca" type="AudioStreamPlayer2D" parent="." unique_id=884220547]
+stream = ExtResource("7_wuieg")
+volume_db = 2.0
+bus = &"SFX"
+
+[node name="Animacion_del_arma" type="AnimatedSprite2D" parent="." unique_id=1266183022]
+sprite_frames = SubResource("SpriteFrames_1ixbh")
+autoplay = "default"
+
+[node name="marcador" type="Node2D" parent="." unique_id=1834717434]
+
+[node name="Marker2D" type="Marker2D" parent="marcador" unique_id=728349595]
+position = Vector2(11, 0)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

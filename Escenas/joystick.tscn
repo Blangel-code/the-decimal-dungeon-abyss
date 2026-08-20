@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b0jixdx10frb8"]
+
+[ext_resource type="Script" uid="uid://kiwo2pobc5he" path="res://Scripts/joystick.gd" id="1_hs5h3"]
+[ext_resource type="Texture2D" uid="uid://511ag1t4pfx1" path="res://Sprites/Menus/Teclas/button-background.png" id="2_gru1d"]
+[ext_resource type="Texture2D" uid="uid://c4of0s2omm6fg" path="res://Sprites/Menus/Teclas/button-empty(joystick).png" id="3_8wvih"]
+[ext_resource type="Texture2D" uid="uid://dynem80dqqcnp" path="res://Sprites/Objetos/Armas/Espadas/weapon_red_gem_sword.png" id="4_siyqg"]
+[ext_resource type="Texture2D" uid="uid://o664ymgm554n" path="res://Sprites/Objetos/Armas/Arco/weapon_bow.png" id="5_gru1d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iaf5e"]
+radius = 95.0
+
+[node name="Joystick" type="Area2D" unique_id=373617097]
+script = ExtResource("1_hs5h3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1888379850]
+shape = SubResource("CircleShape2D_iaf5e")
+
+[node name="Rango" type="Sprite2D" parent="." unique_id=588958008]
+modulate = Color(0.77647233, 0.7764724, 0.7764724, 0.64705884)
+scale = Vector2(6, 6)
+texture = ExtResource("2_gru1d")
+
+[node name="Palanca" type="Sprite2D" parent="." unique_id=1318694173]
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_8wvih")
+
+[node name="Espada" type="Sprite2D" parent="Palanca" unique_id=1078952005]
+position = Vector2(0, -1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_siyqg")
+
+[node name="Arco" type="Sprite2D" parent="Palanca" unique_id=1469166451]
+visible = false
+position = Vector2(-0.8571428, -1.4285716)
+scale = Vector2(0.4540816, 0.4540816)
+texture = ExtResource("5_gru1d")

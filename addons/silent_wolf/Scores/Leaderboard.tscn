@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b2h8ok8yfc7wb"]
+
+[ext_resource type="Script" uid="uid://hjv7aoti4y3f" path="res://addons/silent_wolf/Scores/Leaderboard.gd" id="1"]
+[ext_resource type="Theme" uid="uid://d2eakbmaefnt6" path="res://addons/silent_wolf/assets/themes/sw_theme.tres" id="2_ixaq4"]
+[ext_resource type="PackedScene" uid="uid://clllbf6am8qdf" path="res://addons/silent_wolf/common/SWButton.tscn" id="4"]
+
+[sub_resource type="Theme" id="Theme_j1gah"]
+
+[node name="Leaderboard" type="Node2D" unique_id=22453162]
+script = ExtResource("1")
+
+[node name="OldBoard" type="MarginContainer" parent="." unique_id=914210538]
+visible = false
+
+[node name="HighScores" type="TextureRect" parent="OldBoard" unique_id=336037219]
+layout_mode = 2
+
+[node name="Board" type="VBoxContainer" parent="." unique_id=1473240448]
+offset_left = 232.0
+offset_top = 3.0
+offset_right = 1738.0
+offset_bottom = 1070.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_ixaq4")
+theme_override_constants/separation = 48
+alignment = 1
+
+[node name="TitleContainer" type="CenterContainer" parent="Board" unique_id=1745570327]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Board/TitleContainer" unique_id=933818115]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Leaderboard"
+horizontal_alignment = 1
+
+[node name="MessageContainer" type="CenterContainer" parent="Board" unique_id=329935255]
+visible = false
+layout_mode = 2
+
+[node name="TextMessage" type="Label" parent="Board/MessageContainer" unique_id=1812604154]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Loading scores..."
+
+[node name="HighScores" type="CenterContainer" parent="Board" unique_id=918631284]
+layout_mode = 2
+theme = SubResource("Theme_j1gah")
+
+[node name="ScoreItemContainer" type="VBoxContainer" parent="Board/HighScores" unique_id=1387558449]
+layout_mode = 2
+
+[node name="CloseButtonContainer" type="CenterContainer" parent="Board" unique_id=1684189198]
+layout_mode = 2
+
+[node name="CloseButton" parent="Board/CloseButtonContainer" unique_id=1505232588 instance=ExtResource("4")]
+custom_minimum_size = Vector2(600, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Close Leaderboard"
+
+[connection signal="pressed" from="Board/CloseButtonContainer/CloseButton" to="." method="_on_CloseButton_pressed"]

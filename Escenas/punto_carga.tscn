@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://wssx7iwto4md"]
+
+[ext_resource type="Script" uid="uid://bsc6tolhyhufh" path="res://Scripts/punto_carga.gd" id="1_04h57"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vr25o"]
+size = Vector2(233, 4)
+
+[node name="punto_carga" type="Area2D" unique_id=68667688]
+script = ExtResource("1_04h57")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=495314877]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_vr25o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://puwr03vdm3is"]
+
+[ext_resource type="Script" uid="uid://dhjxwfryy5bmb" path="res://Scripts/enemy.gd" id="1_yj12m"]
+[ext_resource type="Texture2D" uid="uid://sh7txxkqi4at" path="res://Sprites/Personajes/Anim_muerte.png" id="2_6d05f"]
+[ext_resource type="Texture2D" uid="uid://fad3ayx4vyaj" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_idle_anim_f0.png" id="2_d0v5c"]
+[ext_resource type="Texture2D" uid="uid://ds5omttl3rv8n" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_hit_anim_f0.png" id="2_rjn8n"]
+[ext_resource type="Texture2D" uid="uid://ci3nsj7mvjtsw" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_idle_anim_f1.png" id="3_rjn8n"]
+[ext_resource type="Texture2D" uid="uid://dxbh6dbw20tbg" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_idle_anim_f2.png" id="4_04q1f"]
+[ext_resource type="Texture2D" uid="uid://dnojp4yosbfon" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_idle_anim_f3.png" id="5_7mjyd"]
+[ext_resource type="Texture2D" uid="uid://bju6qg302tahu" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_run_anim_f0.png" id="6_fjte3"]
+[ext_resource type="Texture2D" uid="uid://dprq4s3ibaskv" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_run_anim_f1.png" id="7_hvxwc"]
+[ext_resource type="Texture2D" uid="uid://yqvr3l2kv8ea" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_run_anim_f2.png" id="8_06ec5"]
+[ext_resource type="Texture2D" uid="uid://djurlli7ussms" path="res://Sprites/Personajes/Enemigos/Lizard/lizard_f_run_anim_f3.png" id="9_es671"]
+[ext_resource type="AudioStream" uid="uid://dqaxpsia3qem7" path="res://Sonidos/Enemigos/Hit/21.1 Lizzard Hit.wav" id="11_04q1f"]
+[ext_resource type="AudioStream" uid="uid://dr3yyw0h4lj4s" path="res://Sonidos/Enemigos/Atk/17.1 Lizzard Atk.wav" id="12_7mjyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yj12m"]
+size = Vector2(14, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kage"]
+atlas = ExtResource("2_6d05f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukdex"]
+atlas = ExtResource("2_6d05f")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kka4t"]
+atlas = ExtResource("2_6d05f")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e58en"]
+atlas = ExtResource("2_6d05f")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pvjha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kage")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukdex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kka4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e58en")
+}],
+"loop": 0,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rjn8n")
+}],
+"loop": 0,
+"name": &"Hit",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d0v5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rjn8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_04q1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7mjyd")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_fjte3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hvxwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_06ec5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_es671")
+}],
+"loop": 1,
+"name": &"Walking",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_04q1f"]
+radius = 9.0
+height = 26.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1437346051 groups=["enemys"]]
+script = ExtResource("1_yj12m")
+SPEED = 40.0
+vida = 4
+damage = 1
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=417696613]
+path_desired_distance = 30.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1913857896]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_yj12m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1100378204]
+sprite_frames = SubResource("SpriteFrames_pvjha")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=34020466]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2002923047]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_04q1f")
+
+[node name="Timer" type="Timer" parent="." unique_id=66792469]
+wait_time = 1.5
+
+[node name="sonido_recibe_golpe" type="AudioStreamPlayer2D" parent="." unique_id=586255341]
+stream = ExtResource("11_04q1f")
+volume_db = -2.0
+bus = &"SFX"
+
+[node name="enemigo_ataca" type="AudioStreamPlayer2D" parent="." unique_id=335176154]
+stream = ExtResource("12_7mjyd")
+volume_db = -2.0
+bus = &"SFX"
+
+[node name="timer_movimiento" type="Timer" parent="." unique_id=1943445601]
+wait_time = 0.2
+autostart = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="timer_movimiento" to="." method="_on_timer_movimiento_timeout"]

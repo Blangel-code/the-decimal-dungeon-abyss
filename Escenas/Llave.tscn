@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dlwmjfifqff53"]
+
+[ext_resource type="Texture2D" uid="uid://bj14b6x17l87c" path="res://Sprites/Objetos/Llave.png" id="1_3tk34"]
+[ext_resource type="Script" uid="uid://b88vfp3h700p8" path="res://Scripts/objeto_suelo.gd" id="1_4fnwn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4fnwn"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fnwn"]
+atlas = ExtResource("1_3tk34")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts554"]
+atlas = ExtResource("1_3tk34")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmvdl"]
+atlas = ExtResource("1_3tk34")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1ynq"]
+atlas = ExtResource("1_3tk34")
+region = Rect2(0, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsrjn"]
+atlas = ExtResource("1_3tk34")
+region = Rect2(20, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb7mo"]
+atlas = ExtResource("1_3tk34")
+region = Rect2(40, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1lwo"]
+atlas = ExtResource("1_3tk34")
+region = Rect2(0, 40, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tynqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fnwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts554")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmvdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1ynq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsrjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb7mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1lwo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="llave" type="Area2D" unique_id=1398022472]
+script = ExtResource("1_4fnwn")
+nombre_objeto = "llave"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=883144635]
+shape = SubResource("CapsuleShape2D_4fnwn")
+
+[node name="animacion_de_llave" type="AnimatedSprite2D" parent="." unique_id=283908194]
+sprite_frames = SubResource("SpriteFrames_tynqt")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

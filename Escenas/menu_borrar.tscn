@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://baaiuki6um36b"]
+
+[ext_resource type="FontFile" uid="uid://dbigpbaurc7h" path="res://Fuentes de Texto/Jersey15-Regular.ttf" id="1_726l2"]
+[ext_resource type="Script" uid="uid://c58n6cykks4d7" path="res://Scripts/menu_borrar.gd" id="1_brkk4"]
+[ext_resource type="PackedScene" uid="uid://c5n2gwevfeuia" path="res://Escenas/boton_custom_cuadrado.tscn" id="2_brkk4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06xcy"]
+bg_color = Color(0, 0, 0, 0.823)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[node name="Confirmar Borrar" type="CanvasLayer" unique_id=302773795]
+process_mode = 2
+
+[node name="Confirmar Borrar" type="Panel" parent="." unique_id=451066650]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -91.0
+offset_right = 205.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_06xcy")
+script = ExtResource("1_brkk4")
+
+[node name="Si" parent="Confirmar Borrar" unique_id=439046613 instance=ExtResource("2_brkk4")]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 75.0
+offset_right = 122.04124
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(0.89411765, 0.13333334, 0.078431375, 1)
+theme_override_colors/font_focus_color = Color(0.89411765, 0.13333334, 0.078431375, 1)
+theme_override_colors/font_pressed_color = Color(0.89411765, 0.13333334, 0.078431375, 1)
+theme_override_colors/font_hover_color = Color(0.89411765, 0.13333334, 0.078431375, 1)
+text = "btn_yes"
+
+[node name="No" parent="Confirmar Borrar" unique_id=1235860441 instance=ExtResource("2_brkk4")]
+layout_mode = 0
+offset_left = 284.93814
+offset_top = 72.0
+offset_right = 389.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(0.3882353, 0.74509805, 0.39607844, 1)
+theme_override_colors/font_focus_color = Color(0.3882353, 0.74509805, 0.39607844, 1)
+theme_override_colors/font_pressed_color = Color(0.3882353, 0.74509805, 0.39607844, 1)
+theme_override_colors/font_hover_color = Color(0.3882353, 0.74509805, 0.39607844, 1)
+text = "NO"
+
+[node name="Label" type="Label" parent="Confirmar Borrar" unique_id=208890104]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -87.0
+offset_right = 195.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8764798, 0.10286633, 1.92523e-07, 1)
+theme_override_fonts/font = ExtResource("1_726l2")
+theme_override_font_sizes/font_size = 35
+text = "label_delete"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Confirmar Borrar/Si" to="Confirmar Borrar" method="_on_si_pressed"]
+[connection signal="pressed" from="Confirmar Borrar/No" to="Confirmar Borrar" method="_on_no_pressed"]

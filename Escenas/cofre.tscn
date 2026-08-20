@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cxipv00w653ep"]
+
+[ext_resource type="Script" uid="uid://o4pi1n1fxc4b" path="res://Scripts/cofre.gd" id="1_581xp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24euy"]
+size = Vector2(16, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byvvd"]
+size = Vector2(24, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_24euy"]
+load_path = "res://.godot/imported/chest_full_open_anim_f0.png-8f6563011ec4877475967d30bd5f63f4.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lktcw"]
+load_path = "res://.godot/imported/chest_full_open_anim_f1.png-348f2387928fb23d31017050d9660b4d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_582rr"]
+load_path = "res://.godot/imported/chest_full_open_anim_f2.png-7178779afdd96d7d777274989b7f804b.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7owos"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_24euy")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_lktcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_582rr")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Cofre" type="StaticBody2D" unique_id=189735270]
+z_index = -1
+script = ExtResource("1_581xp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1990764009]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_24euy")
+
+[node name="Cofre" type="Area2D" parent="." unique_id=589477131]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cofre" unique_id=384608816]
+shape = SubResource("RectangleShape2D_byvvd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cofre" unique_id=1665572615]
+sprite_frames = SubResource("SpriteFrames_7owos")
+
+[node name="Timer" type="Timer" parent="Cofre" unique_id=626027691]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="Cofre" to="." method="_on_cofre_body_entered"]
+[connection signal="timeout" from="Cofre/Timer" to="." method="_on_timer_timeout"]

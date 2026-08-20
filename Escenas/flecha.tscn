@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ofv7moc60mtp"]
+
+[ext_resource type="Texture2D" uid="uid://swrqg36aqa4i" path="res://Sprites/Objetos/Armas/Arco/weapon_arrow.png" id="1_4w17a"]
+[ext_resource type="Script" uid="uid://cu4hpuvkt1ibr" path="res://Scripts/flecha.gd" id="1_dgns5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgns5"]
+size = Vector2(22, 13)
+
+[node name="Flecha" type="Node2D" unique_id=2012480324]
+script = ExtResource("1_dgns5")
+
+[node name="sprite_flecha" type="Sprite2D" parent="." unique_id=129944942]
+rotation = 1.5707964
+texture = ExtResource("1_4w17a")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=634837299]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2132052396]
+shape = SubResource("RectangleShape2D_dgns5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

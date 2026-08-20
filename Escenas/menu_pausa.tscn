@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://3aoutno0is0o"]
+
+[ext_resource type="Script" uid="uid://tdj464xnvp8v" path="res://Scripts/menu_pausa.gd" id="1_u1its"]
+[ext_resource type="FontFile" uid="uid://dbigpbaurc7h" path="res://Fuentes de Texto/Jersey15-Regular.ttf" id="1_vhfbk"]
+[ext_resource type="PackedScene" uid="uid://ccs373pmpv4v5" path="res://Escenas/boton_custom_rectangular.tscn" id="3_112xm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7drlq"]
+bg_color = Color(0, 0, 0, 0.185)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u1its"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 0.35686275)
+
+[node name="menu_pausa" type="CanvasLayer" unique_id=1340091838]
+process_mode = 2
+script = ExtResource("1_u1its")
+
+[node name="Panel" type="Panel" parent="." unique_id=783210909]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7drlq")
+
+[node name="Label" type="Label" parent="." unique_id=994200935]
+offset_left = 365.0
+offset_top = 187.0
+offset_right = 787.0
+offset_bottom = 258.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("1_vhfbk")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_u1its")
+text = "label_paused"
+horizontal_alignment = 1
+
+[node name="jugar" parent="." unique_id=1141069907 instance=ExtResource("3_112xm")]
+offset_left = 366.0
+offset_top = 258.0
+offset_right = 785.0
+offset_bottom = 345.0
+focus_neighbor_bottom = NodePath("../tienda")
+theme_override_colors/font_color = Color(0.43391815, 0.78814507, 0.38377154, 1)
+theme_override_colors/font_focus_color = Color(0.43529412, 0.7882353, 0.38431373, 1)
+theme_override_colors/font_pressed_color = Color(0.43529412, 0.7882353, 0.38431373, 1)
+theme_override_colors/font_hover_color = Color(0.43529412, 0.7882353, 0.38431373, 1)
+text = "btn_play"
+
+[node name="tienda" parent="." unique_id=823997992 instance=ExtResource("3_112xm")]
+offset_left = 364.0
+offset_top = 347.0
+offset_right = 787.0
+offset_bottom = 431.0
+focus_neighbor_top = NodePath("../jugar")
+focus_neighbor_bottom = NodePath("../menu_principal")
+theme_override_colors/font_color = Color(0.2890195, 0.64302385, 0.7520628, 1)
+theme_override_colors/font_focus_color = Color(0.2901961, 0.6431373, 0.7529412, 1)
+theme_override_colors/font_pressed_color = Color(0.2901961, 0.6431373, 0.7529412, 1)
+theme_override_colors/font_hover_color = Color(0.2901961, 0.6431373, 0.7529412, 1)
+text = "btn_shop"
+
+[node name="menu_principal" parent="." unique_id=1405261864 instance=ExtResource("3_112xm")]
+offset_left = 365.0
+offset_top = 433.0
+offset_right = 786.0
+offset_bottom = 516.0
+focus_neighbor_top = NodePath("../tienda")
+theme_override_colors/font_color = Color(0.90003335, 0.25146514, 0.23770726, 1)
+theme_override_colors/font_focus_color = Color(0.9019608, 0.2509804, 0.23921569, 1)
+theme_override_colors/font_pressed_color = Color(0.9019608, 0.2509804, 0.23921569, 1)
+theme_override_colors/font_hover_color = Color(0.9019608, 0.2509804, 0.23921569, 1)
+text = "btn_back_menu"
+
+[connection signal="pressed" from="jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="tienda" to="." method="_on_tienda_pressed"]
+[connection signal="pressed" from="menu_principal" to="." method="_on_menu_principal_pressed"]

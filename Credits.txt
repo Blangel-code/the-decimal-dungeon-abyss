@@ -1,0 +1,30 @@
+=======================================
+	  THE DECIMAL DUNGEON ABYSS
+=======================================
+
+PROGRAMMING AND DESIGN
+- Blangel
+
+VISUAL ART
+- Tileset and Characters: 0x72 (Dungeon Tileset II)
+  https://0x72.itch.io/dungeontileset-ii?download#google_vignette
+- Menu Background: Image by upklyak on Freepik
+  https://www.freepik.com/free-vector/game-medieval-wooden-castle-door-prison-cartoon-background-fire-with-torch-wall-treasure-chest-gate-with-stone-brick-masonry-ancient-interior-vintage-fortress-with-stairs-column_80136064.htm#fromView=search&page=1&position=12&uuid=ec9fd4c5-5a9b-43fa-aea3-f0c319ae8ec0&query=Medieval+dungeon+cartoon+with+skeleton+and+torches+in+castle+basement+vector+illu
+- Action Buttons: dizeoakamatsu (ui-buttons-20x16-px)
+  https://dizeoakamatsu.itch.io/ui-buttons-20x16-px
+- Cursor: "Alternate Normal Select 2" by THTH (Public Domain)
+  https://www.rw-designer.com/cursor-detail/207583
+
+MUSIC AND SOUND
+- Sound Effects: Leohpaz (Minifantasy Dungeon SFX)
+  https://leohpaz.itch.io/minifantasy-dungeon-sfx-pack
+- Soundtrack: Not Jam Music Pack
+  https://not-jam.itch.io/not-jam-music-pack
+  Track: "Invencible", Music by https://www.fiftysounds.com/es/
+
+TYPOGRAPHY
+- Bungee Spice, Jersey 15, and Dancing Script (Google Fonts).
+  Under SIL Open Font License (OFL).
+
+--------------------------------------
+Thanks for playing!
