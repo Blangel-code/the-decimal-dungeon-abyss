@@ -23,7 +23,7 @@ Plataforma Web: HTML5 exportado para Itch.io
 Clona este repositorio:
 
 Bash
-git clone https://github.com/TU-USUARIO/Nombre-De-Tu-Repositorio.git
+git clone https://github.com/Blangel-code/the-decimal-dungeon-abyss.git
 Abre Godot Engine 4.
 
 Haz clic en Importar y selecciona el archivo project.godot ubicado dentro de la carpeta clonada.
