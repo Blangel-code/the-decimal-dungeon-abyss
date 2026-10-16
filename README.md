@@ -37,4 +37,5 @@ Presiona F5 para ejecutar e iniciar el proyecto.
 👤 Autor
 Desarrollado por Blangel
 
-Itch.io: [Blangel](blangel.itch.io)
+Juego Públicado: [The Decimal Dungeon Abyss](https://blangel.itch.io/the-decimal-dungeon-abyss)
+Itch.io: [Blangel](https://blangel.itch.io/))
