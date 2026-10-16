@@ -37,4 +37,4 @@ Presiona F5 para ejecutar e iniciar el proyecto.
 👤 Autor
 Desarrollado por Blangel
 
-Itch.io: blangel.itch.io
+Itch.io: [Blangel](blangel.itch.io)
